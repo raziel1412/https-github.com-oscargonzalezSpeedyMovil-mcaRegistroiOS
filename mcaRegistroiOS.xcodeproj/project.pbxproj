@@ -9,6 +9,21 @@
 /* Begin PBXBuildFile section */
 		1D2B53E021C19EDB008ABC44 /* mcaRegistroiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2B53DE21C19EDB008ABC44 /* mcaRegistroiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D2B53E721C19F1B008ABC44 /* mcaRegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B53E621C19F1B008ABC44 /* mcaRegisterManager.swift */; };
+		1D2B53F021C1D287008ABC44 /* PrepaidRegisterStep1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B53EF21C1D287008ABC44 /* PrepaidRegisterStep1VC.swift */; };
+		1D2B53F221C1D293008ABC44 /* PrepaidRegisterDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B53F121C1D293008ABC44 /* PrepaidRegisterDataVC.swift */; };
+		1D2B53F721C1D71B008ABC44 /* PrepaidRegisterStep5VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B53F421C1D71B008ABC44 /* PrepaidRegisterStep5VC.swift */; };
+		1D2B53F821C1D71B008ABC44 /* PrepaidRegisterStep4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B53F521C1D71B008ABC44 /* PrepaidRegisterStep4VC.swift */; };
+		1D2B53F921C1D71B008ABC44 /* PrepaidRegisterStep2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B53F621C1D71B008ABC44 /* PrepaidRegisterStep2VC.swift */; };
+		1D2B53FF21C1D72F008ABC44 /* Fixed05ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B53FB21C1D72F008ABC44 /* Fixed05ViewController.swift */; };
+		1D2B540021C1D72F008ABC44 /* Fixed02ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D2B53FC21C1D72F008ABC44 /* Fixed02ViewController.xib */; };
+		1D2B540121C1D72F008ABC44 /* Fixed05ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D2B53FD21C1D72F008ABC44 /* Fixed05ViewController.xib */; };
+		1D2B540221C1D72F008ABC44 /* Fixed02ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B53FE21C1D72F008ABC44 /* Fixed02ViewController.swift */; };
+		1D2B540D21C1D808008ABC44 /* Postpaid-Mixed02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B540C21C1D808008ABC44 /* Postpaid-Mixed02.swift */; };
+		1D2B540F21C1DD89008ABC44 /* PrepaidRegisterMobileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B540E21C1DD88008ABC44 /* PrepaidRegisterMobileVC.swift */; };
+		1D2B541121C1DD9E008ABC44 /* PrepaidRegisterPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B541021C1DD9E008ABC44 /* PrepaidRegisterPasswordVC.swift */; };
+		1D2B541421C2C132008ABC44 /* PrepaidRegisterSendMobileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D2B541221C2C132008ABC44 /* PrepaidRegisterSendMobileVC.xib */; };
+		1D2B541521C2C132008ABC44 /* PrepaidRegisterSendMobileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B541321C2C132008ABC44 /* PrepaidRegisterSendMobileVC.swift */; };
+		1D2B541721C2CB0A008ABC44 /* CodeBySmsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B541621C2CB0A008ABC44 /* CodeBySmsVC.swift */; };
 		A0797C0B905DD3C5B1A5BDC7 /* Pods_mcaRegistroiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF803338F2D99D0BFB743CC7 /* Pods_mcaRegistroiOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -17,6 +32,21 @@
 		1D2B53DE21C19EDB008ABC44 /* mcaRegistroiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mcaRegistroiOS.h; sourceTree = "<group>"; };
 		1D2B53DF21C19EDB008ABC44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D2B53E621C19F1B008ABC44 /* mcaRegisterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mcaRegisterManager.swift; sourceTree = "<group>"; };
+		1D2B53EF21C1D287008ABC44 /* PrepaidRegisterStep1VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepaidRegisterStep1VC.swift; sourceTree = "<group>"; };
+		1D2B53F121C1D293008ABC44 /* PrepaidRegisterDataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepaidRegisterDataVC.swift; sourceTree = "<group>"; };
+		1D2B53F421C1D71B008ABC44 /* PrepaidRegisterStep5VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepaidRegisterStep5VC.swift; sourceTree = "<group>"; };
+		1D2B53F521C1D71B008ABC44 /* PrepaidRegisterStep4VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepaidRegisterStep4VC.swift; sourceTree = "<group>"; };
+		1D2B53F621C1D71B008ABC44 /* PrepaidRegisterStep2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepaidRegisterStep2VC.swift; sourceTree = "<group>"; };
+		1D2B53FB21C1D72F008ABC44 /* Fixed05ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixed05ViewController.swift; sourceTree = "<group>"; };
+		1D2B53FC21C1D72F008ABC44 /* Fixed02ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fixed02ViewController.xib; sourceTree = "<group>"; };
+		1D2B53FD21C1D72F008ABC44 /* Fixed05ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fixed05ViewController.xib; sourceTree = "<group>"; };
+		1D2B53FE21C1D72F008ABC44 /* Fixed02ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixed02ViewController.swift; sourceTree = "<group>"; };
+		1D2B540C21C1D808008ABC44 /* Postpaid-Mixed02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Postpaid-Mixed02.swift"; sourceTree = "<group>"; };
+		1D2B540E21C1DD88008ABC44 /* PrepaidRegisterMobileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepaidRegisterMobileVC.swift; sourceTree = "<group>"; };
+		1D2B541021C1DD9E008ABC44 /* PrepaidRegisterPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepaidRegisterPasswordVC.swift; sourceTree = "<group>"; };
+		1D2B541221C2C132008ABC44 /* PrepaidRegisterSendMobileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrepaidRegisterSendMobileVC.xib; sourceTree = "<group>"; };
+		1D2B541321C2C132008ABC44 /* PrepaidRegisterSendMobileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepaidRegisterSendMobileVC.swift; sourceTree = "<group>"; };
+		1D2B541621C2CB0A008ABC44 /* CodeBySmsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeBySmsVC.swift; sourceTree = "<group>"; };
 		24B59B14FAF88AA39A366C46 /* Pods-mcaRegistroiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mcaRegistroiOS.debug.xcconfig"; path = "../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRegistroiOS/Pods-mcaRegistroiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A0C94DBBB8E8184DA19778B2 /* Pods-mcaRegistroiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mcaRegistroiOS.release.xcconfig"; path = "../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRegistroiOS/Pods-mcaRegistroiOS.release.xcconfig"; sourceTree = "<group>"; };
 		BF803338F2D99D0BFB743CC7 /* Pods_mcaRegistroiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mcaRegistroiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,11 +85,74 @@
 		1D2B53DD21C19EDB008ABC44 /* mcaRegistroiOS */ = {
 			isa = PBXGroup;
 			children = (
+				1D2B53EC21C1D236008ABC44 /* ViewControllers */,
 				1D2B53DE21C19EDB008ABC44 /* mcaRegistroiOS.h */,
 				1D2B53DF21C19EDB008ABC44 /* Info.plist */,
 				1D2B53E621C19F1B008ABC44 /* mcaRegisterManager.swift */,
 			);
 			path = mcaRegistroiOS;
+			sourceTree = "<group>";
+		};
+		1D2B53EC21C1D236008ABC44 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1D2B53EE21C1D265008ABC44 /* CustomRegister */,
+				1D2B53ED21C1D24F008ABC44 /* GeneralRegister */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1D2B53ED21C1D24F008ABC44 /* GeneralRegister */ = {
+			isa = PBXGroup;
+			children = (
+				1D2B541621C2CB0A008ABC44 /* CodeBySmsVC.swift */,
+				1D2B541321C2C132008ABC44 /* PrepaidRegisterSendMobileVC.swift */,
+				1D2B541221C2C132008ABC44 /* PrepaidRegisterSendMobileVC.xib */,
+				1D2B53F121C1D293008ABC44 /* PrepaidRegisterDataVC.swift */,
+				1D2B540E21C1DD88008ABC44 /* PrepaidRegisterMobileVC.swift */,
+				1D2B541021C1DD9E008ABC44 /* PrepaidRegisterPasswordVC.swift */,
+			);
+			path = GeneralRegister;
+			sourceTree = "<group>";
+		};
+		1D2B53EE21C1D265008ABC44 /* CustomRegister */ = {
+			isa = PBXGroup;
+			children = (
+				1D2B53EF21C1D287008ABC44 /* PrepaidRegisterStep1VC.swift */,
+				1D2B540321C1D738008ABC44 /* PostPaid */,
+				1D2B53FA21C1D725008ABC44 /* Fixed */,
+				1D2B53F321C1D70B008ABC44 /* Prepaid */,
+			);
+			path = CustomRegister;
+			sourceTree = "<group>";
+		};
+		1D2B53F321C1D70B008ABC44 /* Prepaid */ = {
+			isa = PBXGroup;
+			children = (
+				1D2B53F621C1D71B008ABC44 /* PrepaidRegisterStep2VC.swift */,
+				1D2B53F521C1D71B008ABC44 /* PrepaidRegisterStep4VC.swift */,
+				1D2B53F421C1D71B008ABC44 /* PrepaidRegisterStep5VC.swift */,
+			);
+			path = Prepaid;
+			sourceTree = "<group>";
+		};
+		1D2B53FA21C1D725008ABC44 /* Fixed */ = {
+			isa = PBXGroup;
+			children = (
+				1D2B53FE21C1D72F008ABC44 /* Fixed02ViewController.swift */,
+				1D2B53FC21C1D72F008ABC44 /* Fixed02ViewController.xib */,
+				1D2B53FB21C1D72F008ABC44 /* Fixed05ViewController.swift */,
+				1D2B53FD21C1D72F008ABC44 /* Fixed05ViewController.xib */,
+			);
+			path = Fixed;
+			sourceTree = "<group>";
+		};
+		1D2B540321C1D738008ABC44 /* PostPaid */ = {
+			isa = PBXGroup;
+			children = (
+				1D2B540C21C1D808008ABC44 /* Postpaid-Mixed02.swift */,
+			);
+			path = PostPaid;
 			sourceTree = "<group>";
 		};
 		90ECA37B7ADA37FCAD48715E /* Frameworks */ = {
@@ -150,6 +243,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D2B540121C1D72F008ABC44 /* Fixed05ViewController.xib in Resources */,
+				1D2B540021C1D72F008ABC44 /* Fixed02ViewController.xib in Resources */,
+				1D2B541421C2C132008ABC44 /* PrepaidRegisterSendMobileVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +299,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D2B541721C2CB0A008ABC44 /* CodeBySmsVC.swift in Sources */,
+				1D2B540D21C1D808008ABC44 /* Postpaid-Mixed02.swift in Sources */,
 				1D2B53E721C19F1B008ABC44 /* mcaRegisterManager.swift in Sources */,
+				1D2B53F821C1D71B008ABC44 /* PrepaidRegisterStep4VC.swift in Sources */,
+				1D2B541521C2C132008ABC44 /* PrepaidRegisterSendMobileVC.swift in Sources */,
+				1D2B53FF21C1D72F008ABC44 /* Fixed05ViewController.swift in Sources */,
+				1D2B53F921C1D71B008ABC44 /* PrepaidRegisterStep2VC.swift in Sources */,
+				1D2B53F021C1D287008ABC44 /* PrepaidRegisterStep1VC.swift in Sources */,
+				1D2B53F221C1D293008ABC44 /* PrepaidRegisterDataVC.swift in Sources */,
+				1D2B53F721C1D71B008ABC44 /* PrepaidRegisterStep5VC.swift in Sources */,
+				1D2B540221C1D72F008ABC44 /* Fixed02ViewController.swift in Sources */,
+				1D2B541121C1DD9E008ABC44 /* PrepaidRegisterPasswordVC.swift in Sources */,
+				1D2B540F21C1DD89008ABC44 /* PrepaidRegisterMobileVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

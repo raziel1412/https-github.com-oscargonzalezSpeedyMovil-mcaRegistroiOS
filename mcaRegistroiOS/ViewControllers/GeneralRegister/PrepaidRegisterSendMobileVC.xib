@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PrepaidRegisterSendMobileVC" customModule="MiClaro" customModuleProvider="target">
+            <connections>
+                <outlet property="lblCelNum" destination="YVF-Fs-fjc" id="yjg-NM-iRM"/>
+                <outlet property="lblDesView" destination="yWL-lD-0oz" id="gzS-mM-iZP"/>
+                <outlet property="lblTilteView" destination="HhF-7V-YH5" id="ft2-dM-hAR"/>
+                <outlet property="view" destination="OpG-mq-tAk" id="D2G-Ff-pbj"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="OpG-mq-tAk">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsi-6d-3xC">
+                    <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_seccion_registro" translatesAutoresizingMaskIntoConstraints="NO" id="EH2-Wb-1fe">
+                            <rect key="frame" x="99.5" y="30" width="120" height="120"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="iBX-S3-sCo"/>
+                                <constraint firstAttribute="height" constant="120" id="vJB-7k-752"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhF-7V-YH5">
+                            <rect key="frame" x="60" y="180" width="200" height="20"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enviaremos un codigo de verificacion por mensaje de texto al siguiente numero movil" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWL-lD-0oz">
+                            <rect key="frame" x="20" y="208" width="280" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="2je-WL-g77"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+56912345678" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVF-Fs-fjc">
+                            <rect key="frame" x="60" y="318" width="200" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="qlt-va-hrz"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="yWL-lD-0oz" secondAttribute="trailing" constant="20" id="3iM-gd-Kfh"/>
+                        <constraint firstItem="HhF-7V-YH5" firstAttribute="top" secondItem="EH2-Wb-1fe" secondAttribute="bottom" constant="30" id="LB8-uh-Tz9"/>
+                        <constraint firstItem="HhF-7V-YH5" firstAttribute="leading" secondItem="dsi-6d-3xC" secondAttribute="leading" constant="60" id="NNv-dQ-AOw"/>
+                        <constraint firstItem="yWL-lD-0oz" firstAttribute="top" secondItem="HhF-7V-YH5" secondAttribute="bottom" constant="8" id="eA7-s3-TQf"/>
+                        <constraint firstItem="EH2-Wb-1fe" firstAttribute="top" secondItem="dsi-6d-3xC" secondAttribute="top" constant="30" id="fv9-aK-JYD"/>
+                        <constraint firstItem="YVF-Fs-fjc" firstAttribute="leading" secondItem="dsi-6d-3xC" secondAttribute="leading" constant="60" id="inn-Hd-dIe"/>
+                        <constraint firstAttribute="trailing" secondItem="HhF-7V-YH5" secondAttribute="trailing" constant="60" id="orT-X5-mnN"/>
+                        <constraint firstItem="yWL-lD-0oz" firstAttribute="leading" secondItem="dsi-6d-3xC" secondAttribute="leading" constant="20" id="ozb-3i-Ufm"/>
+                        <constraint firstAttribute="trailing" secondItem="YVF-Fs-fjc" secondAttribute="trailing" constant="60" id="paf-I3-CVF"/>
+                        <constraint firstItem="EH2-Wb-1fe" firstAttribute="centerX" secondItem="dsi-6d-3xC" secondAttribute="centerX" id="wj3-eV-VZo"/>
+                        <constraint firstItem="YVF-Fs-fjc" firstAttribute="top" secondItem="yWL-lD-0oz" secondAttribute="bottom" constant="40" id="xre-n9-IOR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="RQS-wc-HEb" firstAttribute="trailing" secondItem="dsi-6d-3xC" secondAttribute="trailing" id="3do-qX-zHI"/>
+                <constraint firstItem="dsi-6d-3xC" firstAttribute="leading" secondItem="RQS-wc-HEb" secondAttribute="leading" id="C47-GE-egt"/>
+                <constraint firstItem="dsi-6d-3xC" firstAttribute="top" secondItem="RQS-wc-HEb" secondAttribute="top" id="WIL-8D-vGX"/>
+                <constraint firstItem="RQS-wc-HEb" firstAttribute="bottom" secondItem="dsi-6d-3xC" secondAttribute="bottom" id="kbc-k5-Eb5"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="RQS-wc-HEb"/>
+            <point key="canvasLocation" x="-538" y="43"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ico_seccion_registro" width="101" height="101"/>
+    </resources>
+</document>

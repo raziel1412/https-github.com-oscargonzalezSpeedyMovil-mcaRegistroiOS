@@ -17,9 +17,9 @@ public class mcaRegisterManager: NSObject {
     
     public class func launch(navController: UINavigationController?, typeRegister: RegisterType) {
         if typeRegister == .General {
-            
-        } else {
-            
+             navController?.pushViewController(PrepaidRegisterDataVC(), animated: true)
+        } else if typeRegister == .Custom {
+            navController?.pushViewController(PrepaidRegisterStep1VC(), animated: true)
         }
     }
 
