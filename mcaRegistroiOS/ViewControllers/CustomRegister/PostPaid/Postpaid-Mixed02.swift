@@ -13,6 +13,8 @@ import mcaUtilsiOS
 
 class Postpaid_Mixed02: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
+    var doLoginWhenFinish :((_ doAutomaticLogin: Bool) -> Void) = {_ in }
+    
     ///Clase que construye el header del controller
     private var header : UIHeaderForm = UIHeaderForm(frame: .zero)
     ///Textfield para la contraseña actual
@@ -218,6 +220,7 @@ class Postpaid_Mixed02: UIViewController, UITextFieldDelegate, UIScrollViewDeleg
                                                                         vcPrepaidRegisterSendMobile.setMobilePhone(r: valueNumberPhone)
                                                                         vcPrepaidRegisterSendMobile.setRUT(r: self.rut)
                                                                         vcPrepaidRegisterSendMobile.lineOfBussines = TypeLineOfBussines.Postpago
+                                                                        vcPrepaidRegisterSendMobile.doLoginWhenFinish = self.doLoginWhenFinish
                                                                         self.navigationController?.pushViewController(vcPrepaidRegisterSendMobile, animated: true)
                                                                     }else{
                                                                         GeneralAlerts.showAcceptOnly(title: NSLocalizedString("accept", comment: ""), text: self.conf?.translations?.data?.newRegisterTexts?.newRegisterFailVerify ?? "El número ingresado no pertenece al titular de la cuenta.", icon: AlertIconType.IconoAlertaError, onAcceptEvent: {})

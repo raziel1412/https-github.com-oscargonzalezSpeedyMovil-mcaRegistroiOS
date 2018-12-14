@@ -18,6 +18,8 @@ enum TypeRegisterView {
 
 class PrepaidRegisterSendMobileVC: UIViewController{
     
+    var doLoginWhenFinish :((_ doAutomaticLogin: Bool) -> Void) = {_ in }
+    
     @IBOutlet weak var lblTilteView: UILabel!
     @IBOutlet weak var lblDesView: UILabel!
     @IBOutlet weak var lblCelNum: UILabel!
@@ -123,9 +125,11 @@ class PrepaidRegisterSendMobileVC: UIViewController{
                                                             if self.previousView == TypeRegisterView.Prepaid {
                                                                 let smsCode = PrepaidRegisterStep4VC();
                                                                 smsCode.setValues(number: self.mobilePhone!, rut: self.rut!, Lob: self.lineOfBussines, req: req, personalQ: nil)
+                                                                smsCode.doLoginWhenFinish = self.doLoginWhenFinish
                                                                 self.navigationController?.pushViewController(smsCode, animated: true)
                                                             } else {
                                                                 let bySMS = CodeBySmsVC();
+                                                                bySMS.doLoginWhenFinish = self.doLoginWhenFinish
                                                                 bySMS.lineOfBusinnes = self.lineOfBussines
                                                                 bySMS.rutUser = self.rut!
                                                                 bySMS.phoneUser = self.mobilePhone!
@@ -134,7 +138,8 @@ class PrepaidRegisterSendMobileVC: UIViewController{
                                                                 self.navigationController?.pushViewController(bySMS, animated: true)
                                                             }
                                                             if self.lineOfBussines.rawValue == "3"{
-                                                                let smsCode = PrepaidRegisterStep4VC();
+                                                                let smsCode = PrepaidRegisterStep4VC()
+                                                                smsCode.doLoginWhenFinish = self.doLoginWhenFinish
                                                                 smsCode.setValues(number: self.mobilePhone!, rut: self.rut!, Lob: self.lineOfBussines, req: req, personalQ: nil)
                                                                 self.navigationController?.pushViewController(smsCode, animated: true)
                                                             }

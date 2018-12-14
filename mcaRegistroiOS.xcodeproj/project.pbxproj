@@ -85,10 +85,10 @@
 		1D2B53DD21C19EDB008ABC44 /* mcaRegistroiOS */ = {
 			isa = PBXGroup;
 			children = (
+				1D2B53E621C19F1B008ABC44 /* mcaRegisterManager.swift */,
 				1D2B53EC21C1D236008ABC44 /* ViewControllers */,
 				1D2B53DE21C19EDB008ABC44 /* mcaRegistroiOS.h */,
 				1D2B53DF21C19EDB008ABC44 /* Info.plist */,
-				1D2B53E621C19F1B008ABC44 /* mcaRegisterManager.swift */,
 			);
 			path = mcaRegistroiOS;
 			sourceTree = "<group>";

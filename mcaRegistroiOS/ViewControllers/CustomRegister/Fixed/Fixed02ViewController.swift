@@ -13,6 +13,9 @@ import mcaUtilsiOS
 import mcaManageriOS
 
 class Fixed02ViewController: UIViewController, UITextFieldDelegate, ValidationDelegate {
+    
+    var doLoginWhenFinish :((_ doAutomaticLogin: Bool) -> Void) = {_ in }
+    
     @IBOutlet weak var imgRegistro: UIImageView!
     @IBOutlet weak var lblTituloRegistro: UILabel!
     @IBOutlet weak var lblSubtitulo1: UILabel!
@@ -129,6 +132,7 @@ class Fixed02ViewController: UIViewController, UITextFieldDelegate, ValidationDe
             prepaid5.accountID = self.txtSerie.text ?? ""
             prepaid5.email = self.txtCorreo.text ?? ""
             prepaid5.lineOfBussines = TypeLineOfBussines.Fijo
+            prepaid5.doLoginWhenFinish = self.doLoginWhenFinish
             self.navigationController?.pushViewController(prepaid5, animated: true)
             
         }, onFailure: {(result, error) in

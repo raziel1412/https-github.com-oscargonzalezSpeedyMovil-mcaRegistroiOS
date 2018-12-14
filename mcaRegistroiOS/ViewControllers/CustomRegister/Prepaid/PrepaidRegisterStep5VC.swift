@@ -10,9 +10,10 @@ import UIKit
 import Cartography
 import mcaManageriOS
 import mcaUtilsiOS
-import mcaHomeiOS
 
 class PrepaidRegisterStep5VC: UIViewController, UITextFieldDelegate {
+    
+    var doLoginWhenFinish :((_ doAutomaticLogin: Bool) -> Void) = {_ in }
     
     /// Variable que almacena el request del nnúmero
     private var reqNum : ValidateNumberRequest?;
@@ -295,13 +296,18 @@ class PrepaidRegisterStep5VC: UIViewController, UITextFieldDelegate {
                                                                  onSuccess: { (result) in
                                                                     print(result);
                                                                     DispatchQueue.main.async(execute: {
-                                                                        UIApplication.shared.keyWindow?.rootViewController  = HomeContainerVC();
+                                                                        self.didFinishModuleDoingAutomaticLogin()
                                                                     })
         },
                                                                  onFailure: { (result, myError) in
-                                                                    UIApplication.shared.keyWindow?.rootViewController  = HomeContainerVC()
+                                                                    self.didFinishModuleDoingAutomaticLogin() 
                                                                     
         });
+    }
+    
+    /// callback of VC that launch current module
+    func didFinishModuleDoingAutomaticLogin() {
+        doLoginWhenFinish(true)
     }
 
     /// Función que setea el número

@@ -14,6 +14,8 @@ import mcaManageriOS
 
 class PrepaidRegisterStep1VC: UIViewController, MobilePhoneNumberOnChangeDelegate, UITextFieldDelegate, ValidationDelegate {
     
+    var doLoginWhenFinish :((_ doAutomaticLogin: Bool) -> Void) = {_ in }
+    
     /// Constante que almacena la configuración
     let conf = mcaManagerSession.getGeneralConfig()
     private var headerView : UIHeaderForm = UIHeaderForm(frame: .zero)
@@ -114,15 +116,18 @@ class PrepaidRegisterStep1VC: UIViewController, MobilePhoneNumberOnChangeDelegat
                         case 1: //Fijo
                             let nextVC = Fixed02ViewController()
                             nextVC.RUT = self.txtRut.textField.text ?? ""
+                            nextVC.doLoginWhenFinish = self.doLoginWhenFinish
                             self.navigationController?.pushViewController(nextVC, animated: true);
                             break
                         case 2, -1: //Prepago
                             let nextVC = PrepaidRegisterStep2VC()
+                            nextVC.doLoginWhenFinish = self.doLoginWhenFinish
                             nextVC.RUT = self.txtRut.textField.text ?? ""
                             self.navigationController?.pushViewController(nextVC, animated: true);
                             break
                         case 3: //Pospago y Mixto
                             let nextVC = Postpaid_Mixed02()
+                            nextVC.doLoginWhenFinish = self.doLoginWhenFinish
                             nextVC.rut = self.txtRut.textField.text ?? ""
                             self.navigationController?.pushViewController(nextVC, animated: true)
                         default:

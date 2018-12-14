@@ -13,6 +13,9 @@ import mcaManageriOS
 
 /// Clase encargada de llevar a cabo la segúnda fase de validación para agregar un prepago
 class PrepaidRegisterStep4VC: UIViewController {
+    
+    var doLoginWhenFinish :((_ doAutomaticLogin: Bool) -> Void) = {_ in }
+    
     /// Botón de siguiente
     var nextButton: RedBorderWhiteBackgroundButton!
     /// Vista de contenedor del código donde se ingresará el enviado por SMS
@@ -247,6 +250,7 @@ class PrepaidRegisterStep4VC: UIViewController {
             prepaid5.numberPhone = self.phoneUser
             prepaid5.setValidateNumber(r: self.reqNum)
             prepaid5.lineOfBussines = self.LoB
+            prepaid5.doLoginWhenFinish = self.doLoginWhenFinish
             self.navigationController?.pushViewController(prepaid5, animated: true)
         }, onFailure: { (result, myError) in
             let onAcceptEvent = {

@@ -13,6 +13,8 @@ import mcaManageriOS
 
 /// Clase CodeBySmsVC, muestra la pantalla para la validación del código
 class CodeBySmsVC: UIViewController {
+    
+    var doLoginWhenFinish :((_ doAutomaticLogin: Bool) -> Void) = {_ in }
 
     /// Variable ValidateNumberRequest
     private var reqNum : ValidateNumberRequest?
@@ -171,12 +173,6 @@ class CodeBySmsVC: UIViewController {
         mcaManagerServer.executeValidatePersonalVerificationQuestions(params: req,
                                                                             onSuccess: { (result) in
                                                                                 self.callWSAssociateAccount()
-//                                                                                let pswVC = PrepaidRegisterPasswordVC();
-//                                                                                pswVC.lineOfBussines = self.lineOfBusinnes
-//                                                                                pswVC.setPersonalQuestions(r: self.personal);
-//                                                                                pswVC.setValidateNumber(r: self.reqNum);
-//                                                                                self.navigationController?.pushViewController(pswVC, animated: true)
-//                                                                                self.guardaNumero();
         },
                                                                             onFailure: { (result, myError) in
                                                                                 GeneralAlerts.showAcceptOnly(text: result?.validatePersonalVerificationQuestionsResponse?.acknowledgementDescription ?? "", icon: AlertIconType.IconoAlertaError,acceptTitle: NSLocalizedString("accept", comment: ""), onAcceptEvent: {})
@@ -198,6 +194,7 @@ class CodeBySmsVC: UIViewController {
                     let pswVC = PrepaidRegisterPasswordVC();
                     pswVC.setPersonalQuestions(r: self.personal);
                     pswVC.setValidateNumber(r: r);
+                    pswVC.doLoginWhenFinish = self.doLoginWhenFinish
                     self.navigationController?.pushViewController(pswVC, animated: true)
             }, onFailure: { (result, myError) in
 
@@ -259,6 +256,7 @@ class CodeBySmsVC: UIViewController {
             pswVC.lineOfBussines = self.lineOfBusinnes
             pswVC.setPersonalQuestions(r: self.personal);
             pswVC.setValidateNumber(r: self.reqNum);
+            pswVC.doLoginWhenFinish = self.doLoginWhenFinish
             self.navigationController?.pushViewController(pswVC, animated: true)
             
         }, onFailure: {(result, error) in

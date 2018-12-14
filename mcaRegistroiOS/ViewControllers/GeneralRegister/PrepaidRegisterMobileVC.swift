@@ -13,6 +13,9 @@ import mcaManageriOS
 
 /// Clase encargada de mostrar la vista para agrega el número de teléfono
 class PrepaidRegisterMobileVC: UIViewController, UITextFieldDelegate {
+    
+    var doLoginWhenFinish :((_ doAutomaticLogin: Bool) -> Void) = {_ in }
+    
     /// Constante con los datos del archivo de configuración.
     let conf = mcaManagerSession.getGeneralConfig()
     /// Clase que almacena el request para preguntas de seguridad
@@ -125,6 +128,7 @@ class PrepaidRegisterMobileVC: UIViewController, UITextFieldDelegate {
             vista.setPersonalQuestions(r: self.personal)
 //            vista.setReqNum(r: req)
             vista.lineOfBussines = TypeLineOfBussines.Prepago
+            vista.doLoginWhenFinish = self.doLoginWhenFinish
             vista.setMobilePhone(r: claroNumber)
             vista.view.frame = self.view.frame
             

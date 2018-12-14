@@ -13,6 +13,8 @@ import mcaUtilsiOS
 
 class PrepaidRegisterStep2VC: UIViewController, MobilePhoneNumberOnChangeDelegate, UITextFieldDelegate {
     
+    var doLoginWhenFinish :((_ doAutomaticLogin: Bool) -> Void) = {_ in }
+    
     /// Constante que almacena la configuración
     let conf = mcaManagerSession.getGeneralConfig()
     private var headerView : UIHeaderForm = UIHeaderForm(frame: .zero)
@@ -173,7 +175,7 @@ class PrepaidRegisterStep2VC: UIViewController, MobilePhoneNumberOnChangeDelegat
             vista.lineOfBussines = TypeLineOfBussines.Prepago
             vista.setMobilePhone(r: self.textGroup.textField.text!)
             vista.view.frame = self.view.frame
-            
+            vista.doLoginWhenFinish = self.doLoginWhenFinish
             self.navigationController?.pushViewController(vista, animated: true);
         } else if "" != telefono {
             textGroup.mandatoryInformation.displayView(customString: "eight-digits".localized)

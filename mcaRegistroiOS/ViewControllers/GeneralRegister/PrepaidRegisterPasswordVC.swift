@@ -10,10 +10,12 @@ import UIKit
 import Cartography
 import mcaUtilsiOS
 import mcaManageriOS
-import mcaHomeiOS
 
 /// Clase encargada de validar el código de verificación del registro
 class PrepaidRegisterPasswordVC: UIViewController, UITextFieldDelegate {
+    
+    var doLoginWhenFinish :((_ doAutomaticLogin: Bool) -> Void) = {_ in }
+    
     /// Variable que almacena el request del nnúmero
     private var reqNum : ValidateNumberRequest?;
     /// Variable que almacena la pregunta de seguridad
@@ -245,12 +247,17 @@ class PrepaidRegisterPasswordVC: UIViewController, UITextFieldDelegate {
                                                                  onSuccess: { (result) in
                                                                     print(result);
                                                                     DispatchQueue.main.async(execute: {
-                                                                        UIApplication.shared.keyWindow?.rootViewController  = HomeContainerVC()
+                                                                        self.didFinishModuleDoingAutomaticLogin()
                                                                     })
         },
                                                                  onFailure: { (result, myError) in
                                                                     GeneralAlerts.showAcceptOnly(title: "404-response-profile-information", icon: AlertIconType.IconoAlertaError, onAcceptEvent: {})
         });
+    }
+    
+    /// callback of VC that launch current module
+    func didFinishModuleDoingAutomaticLogin() {
+        doLoginWhenFinish(true)
     }
     
     /// Función para hacer el set de la pregunta de seguridad

@@ -15,12 +15,20 @@ public enum RegisterType {
 
 public class mcaRegisterManager: NSObject {
     
-    public class func launch(navController: UINavigationController?, typeRegister: RegisterType) {
+    open class func launch(navController: UINavigationController?, typeRegister: RegisterType, doLoginWhenFinish: @escaping ((_ doAutomaticLogin: Bool) -> Void)) {
+        
         if typeRegister == .General {
-             navController?.pushViewController(PrepaidRegisterDataVC(), animated: true)
+            let initialRegisterVC = PrepaidRegisterDataVC()
+            initialRegisterVC.doLoginWhenFinish = doLoginWhenFinish
+            navController?.pushViewController(initialRegisterVC, animated: true)
         } else if typeRegister == .Custom {
-            navController?.pushViewController(PrepaidRegisterStep1VC(), animated: true)
+            //navController?.pushViewController(PrepaidRegisterStep1VC(), animated: true)
+            let initialRegisterVC = PrepaidRegisterStep1VC()
+            initialRegisterVC.doLoginWhenFinish = doLoginWhenFinish
+            navController?.pushViewController(initialRegisterVC, animated: true)
         }
+        
+        
     }
 
 }

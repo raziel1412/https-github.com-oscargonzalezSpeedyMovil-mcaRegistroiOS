@@ -16,6 +16,8 @@ import mcaManageriOS
 /// Clase encargada de mostrar el primer paso del registro para el App Mi Claro
 class PrepaidRegisterDataVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, ValidationDelegate {
     
+    var doLoginWhenFinish :((_ doAutomaticLogin: Bool) -> Void) = {_ in }
+    
     /// Botón para validar
     private var cmdValidar : RedBorderWhiteBackgroundButton?
     /// Botón para mostrar información de RUT
@@ -233,10 +235,12 @@ class PrepaidRegisterDataVC: UIViewController, UITableViewDelegate, UITableViewD
                                                                                     vista.setPersonalQuestions(r: req);
                                                                                     vista.setRUT(r: rut);
                                                                                     vista.lineOfBussines = TypeLineOfBussines.Prepago
+                                                                                    vista.doLoginWhenFinish = self.doLoginWhenFinish
                                                                                     self.navigationController?.pushViewController(vista, animated: true);
                                                                                 }else if code == "ASSCM-CUSMAN-VALPERVERQUE-SC-2" {//Pospago
                                                                                     let pswVC = PrepaidRegisterPasswordVC();
                                                                                     pswVC.setPersonalQuestions(r: req);
+                                                                                    pswVC.doLoginWhenFinish = self.doLoginWhenFinish
                                                                                     pswVC.lineOfBussines = TypeLineOfBussines.Postpago
                                                                                     self.navigationController?.pushViewController(pswVC, animated: true)
                                                                                 }
