@@ -39,7 +39,7 @@ class PrepaidRegisterSendMobileVC: UIViewController{
     private var mobilePhone : String?
     
     /// Line of business
-    var lineOfBussines: TypeLineOfBussines = TypeLineOfBussines.Fijo
+    var lineOfBussines: TypeLineOfBussines = TypeLineOfBussines.Fixed
     
     /// Line of business
     var reqNum: ValidateNumberRequest?

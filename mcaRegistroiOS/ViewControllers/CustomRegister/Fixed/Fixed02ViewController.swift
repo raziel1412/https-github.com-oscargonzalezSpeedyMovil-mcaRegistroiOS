@@ -131,7 +131,7 @@ class Fixed02ViewController: UIViewController, UITextFieldDelegate, ValidationDe
             prepaid5.RUT = self.RUT
             prepaid5.accountID = self.txtSerie.text ?? ""
             prepaid5.email = self.txtCorreo.text ?? ""
-            prepaid5.lineOfBussines = TypeLineOfBussines.Fijo
+            prepaid5.lineOfBussines = TypeLineOfBussines.Fixed
             prepaid5.doLoginWhenFinish = self.doLoginWhenFinish
             self.navigationController?.pushViewController(prepaid5, animated: true)
             

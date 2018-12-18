@@ -172,7 +172,7 @@ class PrepaidRegisterStep2VC: UIViewController, MobilePhoneNumberOnChangeDelegat
             let vista = PrepaidRegisterSendMobileVC(nibName: "PrepaidRegisterSendMobileVC", bundle: nil)
             vista.setRUT(r: self.RUT)
             vista.previousView = TypeRegisterView.Prepaid
-            vista.lineOfBussines = TypeLineOfBussines.Prepago
+            vista.lineOfBussines = TypeLineOfBussines.Prepaid
             vista.setMobilePhone(r: self.textGroup.textField.text!)
             vista.view.frame = self.view.frame
             vista.doLoginWhenFinish = self.doLoginWhenFinish

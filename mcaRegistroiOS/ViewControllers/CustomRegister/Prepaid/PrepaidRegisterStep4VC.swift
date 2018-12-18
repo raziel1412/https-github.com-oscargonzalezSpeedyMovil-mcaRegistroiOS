@@ -31,7 +31,7 @@ class PrepaidRegisterStep4VC: UIViewController {
     /// Variable ValidatePersonalVerificationQuestionRequest
     private var personal : ValidatePersonalVerificationQuestionRequest?
     /// Variable que almacena el TypeLineOfBussines
-    var LoB: TypeLineOfBussines = TypeLineOfBussines.Fijo
+    var LoB: TypeLineOfBussines = TypeLineOfBussines.Fixed
     /// Variable que almacena el RUT User
     var RUT: String = ""
     /// Variable que almacena el phoneUser
@@ -136,12 +136,12 @@ class PrepaidRegisterStep4VC: UIViewController {
         let shouldContinue = self.shouldContinue()
         if shouldContinue.should {
             switch LoB {
-            case .Fijo:
+            case .Fixed:
                 break
-            case .Prepago:
+            case .Prepaid:
                 self.callWSvalidateCodePrepaid()
                 break
-            case .Postpago:
+            case .Postpaid:
                 self.callWSvalidateCodePrepaid()
             default:
                 break
@@ -165,12 +165,12 @@ class PrepaidRegisterStep4VC: UIViewController {
     /// Función encargada de llamar al Servicio Web para re-enviar el código
     func resendCode(sender: Any) {
         switch LoB {
-        case .Fijo:
+        case .Fixed:
             break
-        case .Prepago:
+        case .Prepaid:
             self.resendCodePrepaid()
             break
-        case .Postpago:
+        case .Postpaid:
             self.resendCodePrepaid()
         default:
             break

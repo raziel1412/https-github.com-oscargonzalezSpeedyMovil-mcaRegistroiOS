@@ -127,7 +127,7 @@ class PrepaidRegisterMobileVC: UIViewController, UITextFieldDelegate {
             vista.setRUT(r: self.rut);
             vista.setPersonalQuestions(r: self.personal)
 //            vista.setReqNum(r: req)
-            vista.lineOfBussines = TypeLineOfBussines.Prepago
+            vista.lineOfBussines = TypeLineOfBussines.Prepaid
             vista.doLoginWhenFinish = self.doLoginWhenFinish
             vista.setMobilePhone(r: claroNumber)
             vista.view.frame = self.view.frame

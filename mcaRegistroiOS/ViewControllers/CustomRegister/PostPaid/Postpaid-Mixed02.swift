@@ -219,7 +219,7 @@ class Postpaid_Mixed02: UIViewController, UITextFieldDelegate, UIScrollViewDeleg
                                                                         let vcPrepaidRegisterSendMobile = PrepaidRegisterSendMobileVC()
                                                                         vcPrepaidRegisterSendMobile.setMobilePhone(r: valueNumberPhone)
                                                                         vcPrepaidRegisterSendMobile.setRUT(r: self.rut)
-                                                                        vcPrepaidRegisterSendMobile.lineOfBussines = TypeLineOfBussines.Postpago
+                                                                        vcPrepaidRegisterSendMobile.lineOfBussines = TypeLineOfBussines.Postpaid
                                                                         vcPrepaidRegisterSendMobile.doLoginWhenFinish = self.doLoginWhenFinish
                                                                         self.navigationController?.pushViewController(vcPrepaidRegisterSendMobile, animated: true)
                                                                     }else{

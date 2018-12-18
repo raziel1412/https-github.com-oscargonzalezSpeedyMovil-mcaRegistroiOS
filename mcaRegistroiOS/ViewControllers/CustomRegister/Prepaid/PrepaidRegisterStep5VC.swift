@@ -28,7 +28,7 @@ class PrepaidRegisterStep5VC: UIViewController, UITextFieldDelegate {
     /// Arreglo con las validaciones necesarias
     var validationArray = [String]()
     /// Line of business
-    var lineOfBussines: TypeLineOfBussines = TypeLineOfBussines.Prepago
+    var lineOfBussines: TypeLineOfBussines = TypeLineOfBussines.Prepaid
     /// Grupo de constraints
     var grupo : ConstraintGroup?;
     /// Archivo de configuración
@@ -208,7 +208,7 @@ class PrepaidRegisterStep5VC: UIViewController, UITextFieldDelegate {
                 req.createNewRegister?.accountId = ""
                 req.createNewRegister?.isDelegate = "false";
                 req.createNewRegister?.countryCode = mcaManagerSession.getCurrentCountry();
-                if self.lineOfBussines == .Fijo {
+                if self.lineOfBussines == .Fixed {
                     req.createNewRegister?.accountId = self.accountID
                     req.createNewRegister?.email = self.email
                 }
@@ -217,7 +217,7 @@ class PrepaidRegisterStep5VC: UIViewController, UITextFieldDelegate {
                 mcaManagerServer.executeCreateNewRegister(params: req, onSuccess: { (result, resultType) in
                                                                     
                     switch self.lineOfBussines {
-                    case .Fijo:
+                    case .Fixed:
                         let onAcceptEvent = {
                             self.automaticLogin()
                         }
@@ -225,10 +225,10 @@ class PrepaidRegisterStep5VC: UIViewController, UITextFieldDelegate {
                         GeneralAlerts.showAcceptOnly(title: self.conf?.translations?.data?.generales?.successTitle ?? "¡Felicidades!", text: self.conf?.translations?.data?.registro?.registerSuccessText ?? "Tu cuenta Mi Claro se ha creado exitosamente", icon: AlertIconType.IconoAlertaFelicidades, acceptTitle: self.conf?.translations?.data?.generales?.confirmBtn ?? "Confirmar", onAcceptEvent: onAcceptEvent)
                         
                         break
-                    case .Prepago:
+                    case .Prepaid:
                         self.callWSAssociateAccount()
                         break
-                    case .Postpago:
+                    case .Postpaid:
                         let onAcceptEvent = {
                             self.automaticLogin()
                         }

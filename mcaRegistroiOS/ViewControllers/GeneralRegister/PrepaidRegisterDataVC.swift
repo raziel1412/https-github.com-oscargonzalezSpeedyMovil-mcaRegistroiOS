@@ -234,14 +234,14 @@ class PrepaidRegisterDataVC: UIViewController, UITableViewDelegate, UITableViewD
                                                                                     let vista = PrepaidRegisterMobileVC();
                                                                                     vista.setPersonalQuestions(r: req);
                                                                                     vista.setRUT(r: rut);
-                                                                                    vista.lineOfBussines = TypeLineOfBussines.Prepago
+                                                                                    vista.lineOfBussines = TypeLineOfBussines.Prepaid
                                                                                     vista.doLoginWhenFinish = self.doLoginWhenFinish
                                                                                     self.navigationController?.pushViewController(vista, animated: true);
                                                                                 }else if code == "ASSCM-CUSMAN-VALPERVERQUE-SC-2" {//Pospago
                                                                                     let pswVC = PrepaidRegisterPasswordVC();
                                                                                     pswVC.setPersonalQuestions(r: req);
                                                                                     pswVC.doLoginWhenFinish = self.doLoginWhenFinish
-                                                                                    pswVC.lineOfBussines = TypeLineOfBussines.Postpago
+                                                                                    pswVC.lineOfBussines = TypeLineOfBussines.Postpaid
                                                                                     self.navigationController?.pushViewController(pswVC, animated: true)
                                                                                 }
             },
