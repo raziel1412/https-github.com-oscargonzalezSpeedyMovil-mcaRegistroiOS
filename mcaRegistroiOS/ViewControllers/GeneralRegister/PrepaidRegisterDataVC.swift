@@ -372,7 +372,7 @@ class PrepaidRegisterDataVC: UIViewController, UITableViewDelegate, UITableViewD
                 txtRut.autocorrectionType = .no
                 txtRut.addTarget(self, action: #selector(textFieldDidBeginEditing(_:)), for: .editingDidBegin)
                 txtRut.autocapitalizationType = UITextAutocapitalizationType.allCharacters
-                iconImage.image = UIImage(named: "icon_rut_input")
+                iconImage.image = mcaUtilsHelper.getImage(image: "icon_rut_input")
                 //validador?.registerField(txtRut, rules: [RequiredRule(message: String(format: "Se requiere escribir el %@", rutText))]);
                 validador?.registerField(txtRut, rules: [RequiredRule(message: "empty-fields".localized)])
             case "Número de serie", "Numero de serie", "Número de Serie", "Numero de Serie", "NÃºmero de serie":
@@ -382,7 +382,7 @@ class PrepaidRegisterDataVC: UIViewController, UITableViewDelegate, UITableViewD
                 txtRut.tag = Int(item.questionId ?? "2")!;
                 txtRut.autocorrectionType = .no
                 txtRut.autocapitalizationType = .none
-                iconImage.image = UIImage(named: "icon_numserie_input")
+                iconImage.image = mcaUtilsHelper.getImage(image: "icon_numserie_input")
                 //validador?.registerField(txtRut, rules: [RequiredRule(message: String(format: "Se requiere escribir el %@", rutText))]);
                 validador?.registerField(txtRut, rules: [RequiredRule(message: "empty-fields".localized)])
             case "Correo eléctronico", "Correo", "Correo electronico":
@@ -393,7 +393,7 @@ class PrepaidRegisterDataVC: UIViewController, UITableViewDelegate, UITableViewD
                 txtRut.tag = Int(item.questionId ?? "3")!;
                 txtRut.autocapitalizationType = .none
                 txtRut.autocorrectionType = .no
-                iconImage.image = UIImage(named: "icon_correo_input")
+                iconImage.image = mcaUtilsHelper.getImage(image: "icon_correo_input")
                 //validador?.registerField(txtRut, rules: [RequiredRule(message: String(format: "Se requiere escribir el %@", rutText)),
                 //EmailRule(message: "El formato del correo electrónico es incorrecto")])
                 validador?.registerField(txtRut, rules: [RequiredRule(message: "empty-fields".localized), EmailRule(message: "El formato del correo electrónico es incorrecto")])
