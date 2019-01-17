@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D2B53DA21C19EDB008ABC44"
-               BuildableName = "mcaRegistroiOS.framework"
-               BlueprintName = "mcaRegistroiOS"
+               BlueprintIdentifier = "1D03792221ECF65000F70AF5"
+               BuildableName = "mcaRegistroiOSUniversal"
+               BlueprintName = "mcaRegistroiOSUniversal"
                ReferencedContainer = "container:mcaRegistroiOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D2B53DA21C19EDB008ABC44"
-            BuildableName = "mcaRegistroiOS.framework"
-            BlueprintName = "mcaRegistroiOS"
+            BlueprintIdentifier = "1D03792221ECF65000F70AF5"
+            BuildableName = "mcaRegistroiOSUniversal"
+            BlueprintName = "mcaRegistroiOSUniversal"
             ReferencedContainer = "container:mcaRegistroiOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D2B53DA21C19EDB008ABC44"
-            BuildableName = "mcaRegistroiOS.framework"
-            BlueprintName = "mcaRegistroiOS"
+            BlueprintIdentifier = "1D03792221ECF65000F70AF5"
+            BuildableName = "mcaRegistroiOSUniversal"
+            BlueprintName = "mcaRegistroiOSUniversal"
             ReferencedContainer = "container:mcaRegistroiOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
