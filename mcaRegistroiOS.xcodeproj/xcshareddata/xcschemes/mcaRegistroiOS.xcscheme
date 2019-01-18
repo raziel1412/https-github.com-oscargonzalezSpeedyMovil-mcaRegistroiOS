@@ -29,6 +29,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1D2B53DA21C19EDB008ABC44"
+            BuildableName = "mcaRegistroiOS.framework"
+            BlueprintName = "mcaRegistroiOS"
+            ReferencedContainer = "container:mcaRegistroiOS.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
