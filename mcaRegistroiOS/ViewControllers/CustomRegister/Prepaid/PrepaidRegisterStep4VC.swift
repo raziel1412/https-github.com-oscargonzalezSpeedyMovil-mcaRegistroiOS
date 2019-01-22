@@ -143,7 +143,6 @@ class PrepaidRegisterStep4VC: UIViewController {
                 break
             case .Postpaid:
                 self.callWSvalidateCodePrepaid()
-            default:
                 break
             }
             
@@ -172,7 +171,6 @@ class PrepaidRegisterStep4VC: UIViewController {
             break
         case .Postpaid:
             self.resendCodePrepaid()
-        default:
             break
         }
     }
