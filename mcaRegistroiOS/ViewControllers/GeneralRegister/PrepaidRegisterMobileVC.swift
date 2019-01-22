@@ -39,7 +39,9 @@ class PrepaidRegisterMobileVC: UIViewController, UITextFieldDelegate {
         self.view.backgroundColor = institutionalColors.claroWhiteColor;
         headerView.setupElements(imageName: "ico_seccion_registro", title: conf?.translations?.data?.registro?.header, subTitle: conf?.translations?.data?.registro?.registerPrepaid)
         self.view.addSubview(headerView)
-        mobilePhoneView = MobilePhoneNumberContainerView()
+        mobilePhoneView = MobilePhoneNumberContainerView(
+            addPrepaidNumber: conf?.translations?.data?.addService?.addPrepaidNumber ?? "",
+            phoneCountryCode: mcaManagerSession.getGeneralConfig()?.country?.phoneCountryCode)
         mobilePhoneView.mobileTextfield.delegate = self
         self.view.addSubview(mobilePhoneView)
         let next = conf?.translations?.data?.generales?.nextBtn
