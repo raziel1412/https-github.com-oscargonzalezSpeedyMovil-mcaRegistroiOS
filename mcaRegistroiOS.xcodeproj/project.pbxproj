@@ -22,7 +22,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		1D0379F821ED409000F70AF5 /* Pods_mcaRegistroiOS.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF803338F2D99D0BFB743CC7 /* Pods_mcaRegistroiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D2B53E021C19EDB008ABC44 /* mcaRegistroiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2B53DE21C19EDB008ABC44 /* mcaRegistroiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D2B53E721C19F1B008ABC44 /* mcaRegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B53E621C19F1B008ABC44 /* mcaRegisterManager.swift */; };
 		1D2B53F021C1D287008ABC44 /* PrepaidRegisterStep1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B53EF21C1D287008ABC44 /* PrepaidRegisterStep1VC.swift */; };
@@ -40,8 +39,8 @@
 		1D2B541421C2C132008ABC44 /* PrepaidRegisterSendMobileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D2B541221C2C132008ABC44 /* PrepaidRegisterSendMobileVC.xib */; };
 		1D2B541521C2C132008ABC44 /* PrepaidRegisterSendMobileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B541321C2C132008ABC44 /* PrepaidRegisterSendMobileVC.swift */; };
 		1D2B541721C2CB0A008ABC44 /* CodeBySmsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B541621C2CB0A008ABC44 /* CodeBySmsVC.swift */; };
-		1D373F0A21F2872700168BF4 /* mcaManageriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D373F0921F2872700168BF4 /* mcaManageriOS.framework */; };
-		A0797C0B905DD3C5B1A5BDC7 /* Pods_mcaRegistroiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF803338F2D99D0BFB743CC7 /* Pods_mcaRegistroiOS.framework */; };
+		1D8C3B9F21F93580005DBA39 /* mcaManageriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8C3B9E21F93580005DBA39 /* mcaManageriOS.framework */; };
+		1D8C3BA121F93586005DBA39 /* Pods_mcaRegistroiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8C3BA021F93586005DBA39 /* Pods_mcaRegistroiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,7 +50,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1D0379F821ED409000F70AF5 /* Pods_mcaRegistroiOS.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,10 +75,10 @@
 		1D2B541221C2C132008ABC44 /* PrepaidRegisterSendMobileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrepaidRegisterSendMobileVC.xib; sourceTree = "<group>"; };
 		1D2B541321C2C132008ABC44 /* PrepaidRegisterSendMobileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepaidRegisterSendMobileVC.swift; sourceTree = "<group>"; };
 		1D2B541621C2CB0A008ABC44 /* CodeBySmsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeBySmsVC.swift; sourceTree = "<group>"; };
-		1D373F0921F2872700168BF4 /* mcaManageriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mcaManageriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D8C3B9E21F93580005DBA39 /* mcaManageriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mcaManageriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D8C3BA021F93586005DBA39 /* Pods_mcaRegistroiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_mcaRegistroiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B59B14FAF88AA39A366C46 /* Pods-mcaRegistroiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mcaRegistroiOS.debug.xcconfig"; path = "../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRegistroiOS/Pods-mcaRegistroiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A0C94DBBB8E8184DA19778B2 /* Pods-mcaRegistroiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mcaRegistroiOS.release.xcconfig"; path = "../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRegistroiOS/Pods-mcaRegistroiOS.release.xcconfig"; sourceTree = "<group>"; };
-		BF803338F2D99D0BFB743CC7 /* Pods_mcaRegistroiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mcaRegistroiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D373F0A21F2872700168BF4 /* mcaManageriOS.framework in Frameworks */,
-				A0797C0B905DD3C5B1A5BDC7 /* Pods_mcaRegistroiOS.framework in Frameworks */,
+				1D8C3BA121F93586005DBA39 /* Pods_mcaRegistroiOS.framework in Frameworks */,
+				1D8C3B9F21F93580005DBA39 /* mcaManageriOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,8 +188,8 @@
 		90ECA37B7ADA37FCAD48715E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1D373F0921F2872700168BF4 /* mcaManageriOS.framework */,
-				BF803338F2D99D0BFB743CC7 /* Pods_mcaRegistroiOS.framework */,
+				1D8C3BA021F93586005DBA39 /* Pods_mcaRegistroiOS.framework */,
+				1D8C3B9E21F93580005DBA39 /* mcaManageriOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -228,7 +226,7 @@
 				1D2B53D721C19EDB008ABC44 /* Sources */,
 				1D2B53D821C19EDB008ABC44 /* Frameworks */,
 				1D2B53D921C19EDB008ABC44 /* Resources */,
-				9835D6629B3769C2A5A734F3 /* [CP] Copy Pods Resources */,
+				3808318EFFF76E95DBC57416 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -302,7 +300,7 @@
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/sh\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\nPROD_NAME=mcaRegistroiOS\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${PROD_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Copy the framework structure to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROD_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\nif [ \"${SIMULATOR_AVAILABLE}\" = \"true\" ]; then\nxcodebuild -target \"${PROD_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n\n# Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROD_NAME}.framework/Modules/${PROD_NAME}.swiftmodule/.\"\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROD_NAME}.framework/Modules/${PROD_NAME}.swiftmodule\"\nfi\n\n# Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROD_NAME}.framework/${PROD_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROD_NAME}.framework/${PROD_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROD_NAME}.framework/${PROD_NAME}\"\n\n# Open the Universal output folder for convenience\n# open \"${UNIVERSAL_OUTPUTFOLDER}\"\nfi\n\n\n\n";
 		};
-		9835D6629B3769C2A5A734F3 /* [CP] Copy Pods Resources */ = {
+		3808318EFFF76E95DBC57416 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -530,7 +528,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24B59B14FAF88AA39A366C46 /* Pods-mcaRegistroiOS.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -566,7 +563,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A0C94DBBB8E8184DA19778B2 /* Pods-mcaRegistroiOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
