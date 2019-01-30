@@ -226,7 +226,7 @@
 				1D2B53D721C19EDB008ABC44 /* Sources */,
 				1D2B53D821C19EDB008ABC44 /* Frameworks */,
 				1D2B53D921C19EDB008ABC44 /* Resources */,
-				4D0075E1D80598F1129F4A30 /* [CP] Copy Pods Resources */,
+				E968DE5EF233E89463DCE50B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -300,7 +300,25 @@
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/sh\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\nPROD_NAME=mcaRegistroiOS\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${PROD_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Copy the framework structure to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROD_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\nif [ \"${SIMULATOR_AVAILABLE}\" = \"true\" ]; then\nxcodebuild -target \"${PROD_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n\n# Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROD_NAME}.framework/Modules/${PROD_NAME}.swiftmodule/.\"\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROD_NAME}.framework/Modules/${PROD_NAME}.swiftmodule\"\nfi\n\n# Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROD_NAME}.framework/${PROD_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROD_NAME}.framework/${PROD_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROD_NAME}.framework/${PROD_NAME}\"\n\n# Open the Universal output folder for convenience\n# open \"${UNIVERSAL_OUTPUTFOLDER}\"\nfi\n\n\n\n";
 		};
-		4D0075E1D80598F1129F4A30 /* [CP] Copy Pods Resources */ = {
+		E8FB6DF6A551581EB6727F3D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mcaRegistroiOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E968DE5EF233E89463DCE50B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -318,24 +336,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRegistroiOS/Pods-mcaRegistroiOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E8FB6DF6A551581EB6727F3D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-mcaRegistroiOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
