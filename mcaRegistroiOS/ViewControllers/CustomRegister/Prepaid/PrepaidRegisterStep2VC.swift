@@ -99,7 +99,7 @@ class PrepaidRegisterStep2VC: UIViewController, MobilePhoneNumberOnChangeDelegat
         }
         
         let config = mcaManagerSession.getGeneralConfig()
-        let genericWebViewInfo = GenericWebViewModel(headerTitle: config?.translations?.data?.generales?.termsAndConditions ?? "", serviceSelected: WebViewType.TermsAndConditios, loadUrl: config?.termsAndConditions?.url ?? "", buttonNavType: .IconBack, reloadUrlSuccess: config?.paidServices?.first?.recarga?.urlSuccess, paidUrlSucces: config?.paidServices?.first?.pago?.urlSuccess)
+        let genericWebViewInfo = GenericWebViewModel(headerTitle: config?.translations?.data?.generales?.termsAndConditions ?? "", serviceSelected: WebViewType.TermsAndConditions, loadUrl: config?.termsAndConditions?.url ?? "", buttonNavType: .IconBack, reloadUrlSuccess: config?.paidServices?.first?.recarga?.urlSuccess, paidUrlSucces: config?.paidServices?.first?.pago?.urlSuccess)
         mcaUtilsHelper.initGenericWebView(navController: self.navigationController, info: genericWebViewInfo)
     }
     /// Función encargada de validar y envíar el SMS para la fase 2 de agregar prepago
