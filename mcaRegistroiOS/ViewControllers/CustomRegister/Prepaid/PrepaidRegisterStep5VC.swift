@@ -324,7 +324,7 @@ class PrepaidRegisterStep5VC: UIViewController, UITextFieldDelegate {
         }
         let config = mcaManagerSession.getGeneralConfig()
         let genericWebViewInfo = GenericWebViewModel(headerTitle: config?.translations?.data?.generales?.termsAndConditions ?? "", serviceSelected: WebViewType.TermsAndConditions, loadUrl: config?.termsAndConditions?.url ?? "", buttonNavType: .IconBack, reloadUrlSuccess: config?.paidServices?.first?.recarga?.urlSuccess, paidUrlSucces: config?.paidServices?.first?.pago?.urlSuccess)
-        mcaUtilsHelper.initGenericWebView(navController: self.navigationController, info: genericWebViewInfo)
+        self.navigationController?.pushViewController(GenericWebViewVC(info: genericWebViewInfo), animated: true)
     }
     
     /// Función que es llamada al tocar cualquier elemento de la pantalla, para llamar al endEditing
