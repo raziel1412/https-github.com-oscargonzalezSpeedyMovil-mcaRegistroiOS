@@ -213,6 +213,8 @@ class PrepaidRegisterStep5VC: UIViewController, UITextFieldDelegate {
                     req.createNewRegister?.email = self.email
                 }
                 
+                let typeLoB = self.lineOfBussines == .Prepaid ? "1" : self.lineOfBussines == .Postpaid ? "2" : self.lineOfBussines == .Fixed ? "3" : ""
+                
                 
                 mcaManagerServer.executeCreateNewRegister(params: req, onSuccess: { (result, resultType) in
                                                                     
@@ -224,28 +226,37 @@ class PrepaidRegisterStep5VC: UIViewController, UITextFieldDelegate {
                         
                         GeneralAlerts.showAcceptOnly(title: self.conf?.translations?.data?.generales?.successTitle ?? "¡Felicidades!", text: self.conf?.translations?.data?.registro?.registerSuccessText ?? "Tu cuenta Mi Claro se ha creado exitosamente", icon: AlertIconType.IconoAlertaFelicidades, acceptTitle: self.conf?.translations?.data?.generales?.confirmBtn ?? "Confirmar", onAcceptEvent: onAcceptEvent)
                         
+                        AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewRegistro(viewName: "Registro|Exito",type:7, detenido: false, typeLoB: typeLoB)
+                        
                         break
                     case .Prepaid:
-                        self.callWSAssociateAccount()
+                        
+                        let onAcceptEvent = {
+                            self.callWSAssociateAccount()
+                        }
+                        
+                         GeneralAlerts.showAcceptOnly(title: self.conf?.translations?.data?.generales?.successTitle ?? "¡Felicidades!", text: self.conf?.translations?.data?.registro?.registerSuccessText ?? "Tu cuenta Mi Claro se ha creado exitosamente", icon: AlertIconType.IconoAlertaFelicidades, acceptTitle: self.conf?.translations?.data?.generales?.confirmBtn ?? "Confirmar", onAcceptEvent: onAcceptEvent)
+                    
+                        AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewRegistro(viewName: "Registro|Exito",type:7, detenido: false, typeLoB: typeLoB)
+                        
                         break
                     case .Postpaid:
                         let onAcceptEvent = {
                             self.automaticLogin()
                         }
                         GeneralAlerts.showAcceptOnly(title: self.conf?.translations?.data?.generales?.successTitle ?? "¡Felicidades!", text: self.conf?.translations?.data?.registro?.registerSuccessText ?? "Tu cuenta Mi Claro se ha creado exitosamente", icon: AlertIconType.IconoAlertaFelicidades, acceptTitle: self.conf?.translations?.data?.generales?.confirmBtn ?? "Confirmar", onAcceptEvent: onAcceptEvent)
+                        
+                        AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewRegistro(viewName: "Registro|Exito",type:7, detenido: false, typeLoB: typeLoB)
+                        
                     }
                                                                     
                                                                     
                 }, onFailure: { (result, myError) in
-                    //self.callWSAssociateAccount()
-                    //****************************************
                     GeneralAlerts.showAcceptOnly(text: result?.createNewRegisterResponse?.acknowledgementDescription ?? "", icon: .IconoAlertaError, onAcceptEvent: {})
-                    //****************************************
                 });
                 
             } else {
-                self.callWSAssociateAccount()
-                //mandatoryPass2.displayView(customString: conf?.translations?.data?.generales?.passwordSameError)
+                mandatoryPass2.displayView(customString: conf?.translations?.data?.generales?.passwordSameError)
             }
             
         } else {
@@ -267,13 +278,9 @@ class PrepaidRegisterStep5VC: UIViewController, UITextFieldDelegate {
         
         mcaManagerServer.executeAssociateAccount(params: req, onSuccess: {
             (associateResult, resultType) in
-            
-            let onAcceptEvent = {
-                self.automaticLogin()
-            }
-            
-            GeneralAlerts.showAcceptOnly(title: self.conf?.translations?.data?.generales?.successTitle ?? "¡Felicidades!", text: self.conf?.translations?.data?.registro?.registerSuccessText ?? "Tu cuenta Mi Claro se ha creado exitosamente", icon: AlertIconType.IconoAlertaFelicidades, acceptTitle: self.conf?.translations?.data?.generales?.confirmBtn ?? "Confirmar", onAcceptEvent: onAcceptEvent)
-            
+    
+            self.automaticLogin()
+
         }, onFailure: {(result, error) in
             
             let onAcceptEvent = {
