@@ -66,7 +66,7 @@ class PrepaidRegisterDataVC: UIViewController, UITableViewDelegate, UITableViewD
         let parte1 = conf?.translations?.data?.registro?.registerTyCFirst ?? ""
         let parte2 = conf?.translations?.data?.generales?.termsAndConditions ?? ""
         let parte3 = conf?.translations?.data?.registro?.registerTyCFinal ?? ""
-        let strTerminosYCondiciones = String(format: "%@ <b>%@</b> %@", parte1, parte2, parte3)
+//        let strTerminosYCondiciones = String(format: "%@ <b>%@</b> %@", parte1, parte2, parte3)
         
         termsConditions.setContent(String(format: "%@ <b>%@</b> %@", parte1, parte2, parte3), url: mcaManagerSession.getGeneralConfig()?.termsAndConditions?.url ?? "", title: mcaManagerSession.getGeneralConfig()?.translations?.data?.generales?.termsAndConditions ?? "", acceptTitle: mcaManagerSession.getGeneralConfig()?.translations?.data?.generales?.closeBtn ?? "", offlineAction: {mcaManagerSession.showOfflineMessage()})
         termsConditions.setParentView("Registro")
