@@ -321,7 +321,7 @@ class PrepaidRegisterStep1VC: UIViewController, MobilePhoneNumberOnChangeDelegat
         //clearCells()
         errors.forEach({ error in
             print(error)
-            if let errorField =  error.1.field as? SimpleGrayTextField {
+            if let _ = error.1.field as? SimpleGrayTextField {
                 print("an error")
             }
         })
