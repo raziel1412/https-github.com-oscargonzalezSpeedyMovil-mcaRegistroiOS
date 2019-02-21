@@ -21,7 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		05037003A95612AE7B588206 /* Pods_mcaRegistroiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D818F3D26C19F5785DD2CADC /* Pods_mcaRegistroiOS.framework */; };
+		135F2F4CB84C1DDC2AEB56F2 /* Pods_mcaRegistroiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA8884B8B7C0851F23C116E /* Pods_mcaRegistroiOS.framework */; };
 		1D2B53E021C19EDB008ABC44 /* mcaRegistroiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2B53DE21C19EDB008ABC44 /* mcaRegistroiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D2B53E721C19F1B008ABC44 /* mcaRegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B53E621C19F1B008ABC44 /* mcaRegisterManager.swift */; };
 		1D2B53F021C1D287008ABC44 /* PrepaidRegisterStep1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B53EF21C1D287008ABC44 /* PrepaidRegisterStep1VC.swift */; };
@@ -43,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0AA8884B8B7C0851F23C116E /* Pods_mcaRegistroiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mcaRegistroiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		182011CC56D4016357CF9210 /* Pods-mcaRegistroiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mcaRegistroiOS.release.xcconfig"; path = "../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRegistroiOS/Pods-mcaRegistroiOS.release.xcconfig"; sourceTree = "<group>"; };
 		1D2B53DB21C19EDB008ABC44 /* mcaRegistroiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mcaRegistroiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D2B53DE21C19EDB008ABC44 /* mcaRegistroiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mcaRegistroiOS.h; sourceTree = "<group>"; };
 		1D2B53DF21C19EDB008ABC44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,9 +65,7 @@
 		1D2B541321C2C132008ABC44 /* PrepaidRegisterSendMobileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepaidRegisterSendMobileVC.swift; sourceTree = "<group>"; };
 		1D2B541621C2CB0A008ABC44 /* CodeBySmsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeBySmsVC.swift; sourceTree = "<group>"; };
 		1D8C3B9E21F93580005DBA39 /* mcaManageriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mcaManageriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FEA503CD420E11985BCCE1E /* Pods-mcaRegistroiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mcaRegistroiOS.release.xcconfig"; path = "../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRegistroiOS/Pods-mcaRegistroiOS.release.xcconfig"; sourceTree = "<group>"; };
-		69266B134F6F62E7AEF025FE /* Pods-mcaRegistroiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mcaRegistroiOS.debug.xcconfig"; path = "../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRegistroiOS/Pods-mcaRegistroiOS.debug.xcconfig"; sourceTree = "<group>"; };
-		D818F3D26C19F5785DD2CADC /* Pods_mcaRegistroiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mcaRegistroiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FB8BAF81EDA5DDE382F3917 /* Pods-mcaRegistroiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mcaRegistroiOS.debug.xcconfig"; path = "../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRegistroiOS/Pods-mcaRegistroiOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,20 +74,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D8C3B9F21F93580005DBA39 /* mcaManageriOS.framework in Frameworks */,
-				05037003A95612AE7B588206 /* Pods_mcaRegistroiOS.framework in Frameworks */,
+				135F2F4CB84C1DDC2AEB56F2 /* Pods_mcaRegistroiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		038634C2AA7D6C4CFB54BB27 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9FB8BAF81EDA5DDE382F3917 /* Pods-mcaRegistroiOS.debug.xcconfig */,
+				182011CC56D4016357CF9210 /* Pods-mcaRegistroiOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		1D2B53D121C19EDB008ABC44 = {
 			isa = PBXGroup;
 			children = (
 				1D2B53DD21C19EDB008ABC44 /* mcaRegistroiOS */,
 				1D2B53DC21C19EDB008ABC44 /* Products */,
 				90ECA37B7ADA37FCAD48715E /* Frameworks */,
-				F60F61476CE43C0613A2AC0E /* Pods */,
+				038634C2AA7D6C4CFB54BB27 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,18 +185,9 @@
 			isa = PBXGroup;
 			children = (
 				1D8C3B9E21F93580005DBA39 /* mcaManageriOS.framework */,
-				D818F3D26C19F5785DD2CADC /* Pods_mcaRegistroiOS.framework */,
+				0AA8884B8B7C0851F23C116E /* Pods_mcaRegistroiOS.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F60F61476CE43C0613A2AC0E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				69266B134F6F62E7AEF025FE /* Pods-mcaRegistroiOS.debug.xcconfig */,
-				2FEA503CD420E11985BCCE1E /* Pods-mcaRegistroiOS.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,12 +208,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D2B53E321C19EDB008ABC44 /* Build configuration list for PBXNativeTarget "mcaRegistroiOS" */;
 			buildPhases = (
-				A6DD2C63F912070F69C7A2D3 /* [CP] Check Pods Manifest.lock */,
+				6BF9B136E13DECB116A13752 /* [CP] Check Pods Manifest.lock */,
 				1D2B53D621C19EDB008ABC44 /* Headers */,
 				1D2B53D721C19EDB008ABC44 /* Sources */,
 				1D2B53D821C19EDB008ABC44 /* Frameworks */,
 				1D2B53D921C19EDB008ABC44 /* Resources */,
-				C65FA17435247FE6D1EC8948 /* [CP] Copy Pods Resources */,
+				2E9FEF6DE7B6DC907FA9C65E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -287,25 +287,7 @@
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/sh\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\nPROD_NAME=mcaRegistroiOS\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${PROD_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Copy the framework structure to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROD_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\nif [ \"${SIMULATOR_AVAILABLE}\" = \"true\" ]; then\nxcodebuild -target \"${PROD_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n\n# Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROD_NAME}.framework/Modules/${PROD_NAME}.swiftmodule/.\"\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROD_NAME}.framework/Modules/${PROD_NAME}.swiftmodule\"\nfi\n\n# Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROD_NAME}.framework/${PROD_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROD_NAME}.framework/${PROD_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROD_NAME}.framework/${PROD_NAME}\"\n\n# Open the Universal output folder for convenience\n# open \"${UNIVERSAL_OUTPUTFOLDER}\"\nfi\n\n\n\n";
 		};
-		A6DD2C63F912070F69C7A2D3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-mcaRegistroiOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C65FA17435247FE6D1EC8948 /* [CP] Copy Pods Resources */ = {
+		2E9FEF6DE7B6DC907FA9C65E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -323,6 +305,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRegistroiOS/Pods-mcaRegistroiOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BF9B136E13DECB116A13752 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mcaRegistroiOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -509,7 +509,7 @@
 		};
 		1D2B53E421C19EDB008ABC44 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69266B134F6F62E7AEF025FE /* Pods-mcaRegistroiOS.debug.xcconfig */;
+			baseConfigurationReference = 9FB8BAF81EDA5DDE382F3917 /* Pods-mcaRegistroiOS.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -543,7 +543,7 @@
 		};
 		1D2B53E521C19EDB008ABC44 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FEA503CD420E11985BCCE1E /* Pods-mcaRegistroiOS.release.xcconfig */;
+			baseConfigurationReference = 182011CC56D4016357CF9210 /* Pods-mcaRegistroiOS.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
