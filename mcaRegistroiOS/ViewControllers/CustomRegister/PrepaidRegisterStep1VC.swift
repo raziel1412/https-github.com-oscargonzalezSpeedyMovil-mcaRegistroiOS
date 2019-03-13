@@ -35,11 +35,18 @@ class PrepaidRegisterStep1VC: UIViewController, MobilePhoneNumberOnChangeDelegat
         let viewContent : UIView = UIView(frame: self.view.bounds)
         validador = Validator()
         
-        headerView.setupElements(imageName: "ico_seccion_registro", title: conf?.translations?.data?.newRegisterTexts?.newRegisterTitle ?? "", subTitle: conf?.translations?.data?.newRegisterTexts?.newRegisterDescriptionStep1 ?? "")
+        let titleHeader =  conf?.translations?.data?.newRegisterTexts?.newRegisterTitle ?? ""
+        let subTitle = conf?.translations?.data?.newRegisterTexts?.newRegisterDescriptionStep1 ?? ""
+        
+        headerView.setupElements(imageName: "ico_seccion_registro", title: titleHeader, subTitle: subTitle)
         
         viewContent.addSubview(headerView)
         
-        txtRut.setupContent(imageName: "icon_rut_input", text: conf?.translations?.data?.newRegisterTexts?.newRegisterUserProfileId ?? "", placeHolder: conf?.translations?.data?.newRegisterTexts?.newRegisterUserProfileId ?? "")
+        let text = conf?.translations?.data?.newRegisterTexts?.newRegisterUserProfileId ?? ""
+        let placeHolder = conf?.translations?.data?.newRegisterTexts?.newRegisterUserProfileId ?? ""
+        let imageIcon = "icon_rut_input"
+        
+        txtRut.setupContent(imageName: imageIcon, text: text, placeHolder: placeHolder)
         //textGroup.changeFont(font: UIFont(name: RobotoFontName.RobotoBlack.rawValue, size: CGFloat(14.0))!)
         txtRut.textField.delegate = self
         txtRut.textField.keyboardType = .asciiCapable
@@ -50,8 +57,10 @@ class PrepaidRegisterStep1VC: UIViewController, MobilePhoneNumberOnChangeDelegat
         validador?.registerField(txtRut.textField, rules: [RequiredRule(message: "empty-fields".localized)])
         viewContent.addSubview(txtRut)
         
-        instructionLbl.text = conf?.translations?.data?.newRegisterTexts?.newRegisterSubStep1 ?? ""
-        viewContent.addSubview(instructionLbl)
+        if mcaManagerSession.getLocalConfig()?.enableModulesFeatures?.featuresRegisterModule?[safe: 0]?.enableInstructionsLabel ?? false {
+            instructionLbl.text = conf?.translations?.data?.newRegisterTexts?.newRegisterSubStep1 ?? ""
+            viewContent.addSubview(instructionLbl)
+        }
         
         let parte1 = conf?.translations?.data?.newRegisterTexts?.newRegisterTyCFirst ?? "";
         let parte2 = conf?.translations?.data?.generales?.termsAndConditions ?? "";
@@ -102,47 +111,55 @@ class PrepaidRegisterStep1VC: UIViewController, MobilePhoneNumberOnChangeDelegat
                 params.identifyUserLoB?.lineOfBusiness = "0"
                 params.identifyUserLoB?.userProfileId = txtRut.textField.text
                 
-                mcaManagerServer.executeIdentifyUserLoB(params: params, onSuccess: {(LoBResult, resultType) in
-                    
-                    let isRegistered = LoBResult.identifyUserLoBResponse?.isRegistered ?? false
-                 
-                    if isRegistered {
-                        GeneralAlerts.showAcceptOnly(title: "Cliente Registrado", icon: AlertIconType.IconoAlertaError, acceptTitle: self.conf?.translations?.data?.generales?.confirmBtn ?? "Confirmar", onAcceptEvent: {})
-                    } else {
-                        let LoB = LoBResult.identifyUserLoBResponse?.loB ?? 0
-                        //let LoB = -1
-    
-                        switch LoB {
-                        case 1: //Fijo
-                            let nextVC = Fixed02ViewController()
-                            nextVC.RUT = self.txtRut.textField.text ?? ""
-                            nextVC.doLoginWhenFinish = self.doLoginWhenFinish
-                            self.navigationController?.pushViewController(nextVC, animated: true);
-                            break
-                        case 2, -1: //Prepago
-                            let nextVC = PrepaidRegisterStep2VC()
-                            nextVC.doLoginWhenFinish = self.doLoginWhenFinish
-                            nextVC.RUT = self.txtRut.textField.text ?? ""
-                            self.navigationController?.pushViewController(nextVC, animated: true);
-                            break
-                        case 3: //Pospago y Mixto
-                            let nextVC = Postpaid_Mixed02()
-                            nextVC.doLoginWhenFinish = self.doLoginWhenFinish
-                            nextVC.rut = self.txtRut.textField.text ?? ""
-                            self.navigationController?.pushViewController(nextVC, animated: true)
-                        default:
-                            GeneralAlerts.showAcceptOnly(title: "Error", text: "failure-services".localized, icon:.IconoAlertaSMS, onAcceptEvent: {})
-                            break
-                        }
-                    }
-
-                }, onFailure: {(result, myError) in
-                    if(result?.identifyUserLoBResponse?.acknowledgementCode == "ASSCM-ACCMAN-IDNUSRLOB-BSERR-0"){
-                        GeneralAlerts.showAcceptOnly(text: "RUT INVALIDO", icon: .IconoAlertaError, onAcceptEvent: {})
-                    }else{
-                        GeneralAlerts.showAcceptOnly(text: result?.identifyUserLoBResponse?.acknowledgementDescription ?? "", icon: .IconoAlertaError, onAcceptEvent: {})
-                    }
-                })
+                let bySMS = CodeBySmsVC();
+                bySMS.doLoginWhenFinish = self.doLoginWhenFinish
+                bySMS.rutUser = txtRut.textField.text!
+                bySMS.phoneUser = txtRut.textField.text!
+//                bySMS.setPersonalQuestions(r: self.personal);
+//                bySMS.setValidateNumber(r: req);
+                self.navigationController?.pushViewController(bySMS, animated: true)
+                
+//                mcaManagerServer.executeIdentifyUserLoB(params: params, onSuccess: {(LoBResult, resultType) in
+//
+//                    let isRegistered = LoBResult.identifyUserLoBResponse?.isRegistered ?? false
+//
+//                    if isRegistered {
+//                        GeneralAlerts.showAcceptOnly(title: "Cliente Registrado", icon: AlertIconType.IconoAlertaError, acceptTitle: self.conf?.translations?.data?.generales?.confirmBtn ?? "Confirmar", onAcceptEvent: {})
+//                    } else {
+//                        let LoB = LoBResult.identifyUserLoBResponse?.loB ?? 0
+//                        //let LoB = -1
+//
+//                        switch LoB {
+//                        case 1: //Fijo
+//                            let nextVC = Fixed02ViewController()
+//                            nextVC.RUT = self.txtRut.textField.text ?? ""
+//                            nextVC.doLoginWhenFinish = self.doLoginWhenFinish
+//                            self.navigationController?.pushViewController(nextVC, animated: true);
+//                            break
+//                        case 2, -1: //Prepago
+//                            let nextVC = PrepaidRegisterStep2VC()
+//                            nextVC.doLoginWhenFinish = self.doLoginWhenFinish
+//                            nextVC.RUT = self.txtRut.textField.text ?? ""
+//                            self.navigationController?.pushViewController(nextVC, animated: true);
+//                            break
+//                        case 3: //Pospago y Mixto
+//                            let nextVC = Postpaid_Mixed02()
+//                            nextVC.doLoginWhenFinish = self.doLoginWhenFinish
+//                            nextVC.rut = self.txtRut.textField.text ?? ""
+//                            self.navigationController?.pushViewController(nextVC, animated: true)
+//                        default:
+//                            GeneralAlerts.showAcceptOnly(title: "Error", text: "failure-services".localized, icon:.IconoAlertaSMS, onAcceptEvent: {})
+//                            break
+//                        }
+//                    }
+//
+//                }, onFailure: {(result, myError) in
+//                    if(result?.identifyUserLoBResponse?.acknowledgementCode == "ASSCM-ACCMAN-IDNUSRLOB-BSERR-0"){
+//                        GeneralAlerts.showAcceptOnly(text: "RUT INVALIDO", icon: .IconoAlertaError, onAcceptEvent: {})
+//                    }else{
+//                        GeneralAlerts.showAcceptOnly(text: result?.identifyUserLoBResponse?.acknowledgementDescription ?? "", icon: .IconoAlertaError, onAcceptEvent: {})
+//                    }
+//                })
             }
         } else {
             // RUT VACIO
@@ -180,12 +197,16 @@ class PrepaidRegisterStep1VC: UIViewController, MobilePhoneNumberOnChangeDelegat
             group.trailing == view.trailing - 31.0
             group.height == 60.0
             
-            instruction.top == group.bottom + 16.0
-            instruction.leading == view.leading + 32.0
-            instruction.trailing == view.trailing - 31.0
-            instruction.height == 60.0
-            
-            box.top == instruction.bottom + 16.0
+            if mcaManagerSession.getLocalConfig()?.enableModulesFeatures?.featuresRegisterModule?[safe: 0]?.enableInstructionsLabel ?? false {
+                instruction.top == group.bottom + 16.0
+                instruction.leading == view.leading + 32.0
+                instruction.trailing == view.trailing - 31.0
+                instruction.height == 60.0
+                
+                box.top == instruction.bottom + 16.0
+            }else{
+                box.top == group.bottom + 16.0
+            }
             box.leading == view.leading + 32.0
             box.trailing == view.trailing - 31.0
             box.height == 40.0
@@ -204,7 +225,14 @@ class PrepaidRegisterStep1VC: UIViewController, MobilePhoneNumberOnChangeDelegat
     /// Función encargada de inicializar elementos de la vista e inicializar variables
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupElements()
+        self.view.backgroundColor = institutionalColors.claroWhiteColor
+        let showModule = mcaManagerSession.getLocalConfig()?.showModulesConfiguration?.showRegisterModule ?? false
+        if showModule {
+            setupElements()
+        }else{
+            self.navigationController?.popViewController(animated: true)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

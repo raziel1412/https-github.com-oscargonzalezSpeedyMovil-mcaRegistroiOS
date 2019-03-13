@@ -56,6 +56,7 @@ class PrepaidRegisterStep4VC: UIViewController {
         viewContainer.addSubview(headerView)
         codeContainer = CodeContainerView()
         codeContainer.frame = CGRect(x: 0, y: 0, width: self.view.frame.width * 0.45, height: 40)
+        codeContainer.numberCode =  6
         codeContainer.setPosition()
         codeContainer.setKeyboardType(tipoTeclado: .numberPad)
         viewContainer.addSubview(codeContainer)

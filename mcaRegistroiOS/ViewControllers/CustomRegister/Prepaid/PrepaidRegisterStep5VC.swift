@@ -93,12 +93,12 @@ class PrepaidRegisterStep5VC: UIViewController, UITextFieldDelegate {
             header.height == view.height * 0.35
         }
         
-        imgSecurity1.image =  #imageLiteral(resourceName: "icon_contrasena_input")
+        imgSecurity1.image =  mcaUtilsHelper.getImage(image: "icon_contrasena_input")
         imgSecurity1.contentMode = .scaleAspectFit
         imgSecurity1.backgroundColor = UIColor.clear
         self.view.addSubview(imgSecurity1)
         
-        imgSecurity2.image =  #imageLiteral(resourceName: "icon_contrasena_input")
+        imgSecurity2.image =  mcaUtilsHelper.getImage(image: "icon_contrasena_input")
         imgSecurity2.contentMode = .scaleAspectFit
         imgSecurity2.backgroundColor = UIColor.clear
         self.view.addSubview(imgSecurity2)

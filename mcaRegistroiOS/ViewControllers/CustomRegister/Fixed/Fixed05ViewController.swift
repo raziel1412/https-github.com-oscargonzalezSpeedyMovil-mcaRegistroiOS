@@ -155,7 +155,14 @@ class Fixed05ViewController: UIViewController, UITextFieldDelegate, ValidationDe
             self.myScrollView.bounces = false
         }
     }
-
+    public init() {
+        super.init(nibName: nil, bundle: Bundle(for: Fixed05ViewController.self))
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
     }

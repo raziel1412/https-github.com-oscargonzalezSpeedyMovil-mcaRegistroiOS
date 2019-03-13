@@ -103,6 +103,14 @@ class Fixed02ViewController: UIViewController, UITextFieldDelegate, ValidationDe
         // Dispose of any resources that can be recreated.
     }
     
+    public init() {
+        super.init(nibName: nil, bundle: Bundle(for: Fixed02ViewController.self))
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 
     @IBAction func cmdSiguiente_OnClick(_ sender: RedBorderWhiteBackgroundButton) {
         print(String(format: "%@ Ejecuta Siguiente", String(describing: Fixed02ViewController.self)));
