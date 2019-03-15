@@ -28,6 +28,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1D03791621ECF60E00F70AF5"
+               BuildableName = "mcaWelcomeiOSUniversal"
+               BlueprintName = "mcaWelcomeiOSUniversal"
+               ReferencedContainer = "container:../mcaWelcomeiOS/mcaWelcomeiOS.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "1D03792221ECF65000F70AF5"
                BuildableName = "mcaRegistroiOSUniversal"
                BlueprintName = "mcaRegistroiOSUniversal"
