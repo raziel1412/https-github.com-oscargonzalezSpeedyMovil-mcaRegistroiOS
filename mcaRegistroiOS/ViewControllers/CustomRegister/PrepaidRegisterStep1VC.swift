@@ -70,9 +70,10 @@ class PrepaidRegisterStep1VC: UIViewController, MobilePhoneNumberOnChangeDelegat
         termsConditions.setContent(String(format: "%@ <b>%@</b> %@", parte1, parte2, parte3), url: mcaManagerSession.getGeneralConfig()?.termsAndConditions?.url ?? "", title: mcaManagerSession.getGeneralConfig()?.translations?.data?.generales?.termsAndConditions ?? "", acceptTitle: mcaManagerSession.getGeneralConfig()?.translations?.data?.generales?.closeBtn ?? "", offlineAction: {
             mcaManagerSession.showOfflineMessage()
         })
-        termsConditions.setupClickDelegate(target: self, action: #selector(self.lnkTerminos_OnClick(sender:)))
-        viewContent.addSubview(termsConditions)
+//        termsConditions.setupClickDelegate(target: self, action: #selector(self.lnkTerminos_OnClick(sender:)))
         termsConditions.checkBox.addTarget(self, action: #selector(self.chkValidate), for: UIControlEvents.touchUpInside)
+        viewContent.addSubview(termsConditions)
+      
         
         nextButton = RedBorderWhiteBackgroundButton(textButton: conf?.translations?.data?.generales?.nextBtn ?? "")
         nextButton.addTarget(self, action: #selector(nextStep), for: UIControlEvents.touchUpInside)

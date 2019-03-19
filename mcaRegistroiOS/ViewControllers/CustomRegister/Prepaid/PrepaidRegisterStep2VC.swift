@@ -90,18 +90,6 @@ class PrepaidRegisterStep2VC: UIViewController, MobilePhoneNumberOnChangeDelegat
     func MobilePhoneChangeData(texto: String) {
     }
     
-    /// Función encargada de enviar a términos y condiciones
-    func lnkTerminos_OnClick(sender: Any) {
-        AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Mis servicios|Agregar prepago|Paso 1|Ingresar numero movil:Terminos y condiciones")
-        if false == mcaManagerSession.isNetworkConnected() {
-            mcaManagerSession.showOfflineMessage()
-            return;
-        }
-        
-        let config = mcaManagerSession.getGeneralConfig()
-        let genericWebViewInfo = GenericWebViewModel(headerTitle: config?.translations?.data?.generales?.termsAndConditions ?? "", serviceSelected: WebViewType.TermsAndConditions, loadUrl: config?.termsAndConditions?.url ?? "", buttonNavType: .IconBack, reloadUrlSuccess: config?.paidServices?.first?.recarga?.urlSuccess, paidUrlSucces: config?.paidServices?.first?.pago?.urlSuccess)
-        self.navigationController?.pushViewController(GenericWebViewVC(info: genericWebViewInfo), animated: true)
-    }
     /// Función encargada de validar y envíar el SMS para la fase 2 de agregar prepago
     func sendSMS() {
         

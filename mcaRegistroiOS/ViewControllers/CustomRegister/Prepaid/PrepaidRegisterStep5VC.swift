@@ -322,17 +322,6 @@ class PrepaidRegisterStep5VC: UIViewController, UITextFieldDelegate {
     func setValidateNumber(r : ValidateNumberRequest?) {
         self.reqNum = r;
     }
-    /// Función que permite cambiar el status del check de términos y condiciones
-    /// - parameter sender: Any
-    func lnkTerminos_OnClick(sender: Any) {
-        if false == mcaManagerSession.isNetworkConnected() {
-            mcaManagerSession.showOfflineMessage()
-            return;
-        }
-        let config = mcaManagerSession.getGeneralConfig()
-        let genericWebViewInfo = GenericWebViewModel(headerTitle: config?.translations?.data?.generales?.termsAndConditions ?? "", serviceSelected: WebViewType.TermsAndConditions, loadUrl: config?.termsAndConditions?.url ?? "", buttonNavType: .IconBack, reloadUrlSuccess: config?.paidServices?.first?.recarga?.urlSuccess, paidUrlSucces: config?.paidServices?.first?.pago?.urlSuccess)
-        self.navigationController?.pushViewController(GenericWebViewVC(info: genericWebViewInfo), animated: true)
-    }
     
     /// Función que es llamada al tocar cualquier elemento de la pantalla, para llamar al endEditing
     /// - parameter touches: Set<UITouch>
