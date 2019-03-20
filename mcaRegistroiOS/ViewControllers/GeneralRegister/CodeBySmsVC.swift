@@ -66,7 +66,7 @@ class CodeBySmsVC: UIViewController {
         self.view.addSubview(codeContainer)
         
         /// TODO : cambiar el texto por el archivo de configuración
-        if mcaManagerSession.getLocalConfig()?.enableModulesFeatures?.featuresRegisterModule?[safe: 0]?.enableQuestionLabel ?? false {
+        if mcaManagerSession.getLocalConfig()?.mcaConfigFile?.enableModulesFeatures?.featuresRegisterModule?[safe: 0]?.enableQuestionLabel ?? false {
             questionLabel.text = conf?.translations?.data?.registro?.pinValidationResendText != nil ? (conf?.translations?.data?.registro?.pinValidationResendText)! : "¿No te ha llegado el código?"
             self.view.addSubview(questionLabel)
         }
@@ -93,7 +93,7 @@ class CodeBySmsVC: UIViewController {
             header.trailing == view.trailing
             header.height == view.height * 0.35
             
-            if mcaManagerSession.getLocalConfig()?.enableModulesFeatures?.featuresRegisterModule?[safe: 0]?.enableInsertCodeLabel ?? false {
+            if mcaManagerSession.getLocalConfig()?.mcaConfigFile?.enableModulesFeatures?.featuresRegisterModule?[safe: 0]?.enableInsertCodeLabel ?? false {
                 
                 codeLabel.top == header.bottom
                 codeLabel.leading == view.leading
@@ -118,7 +118,7 @@ class CodeBySmsVC: UIViewController {
             
         }
         
-        if mcaManagerSession.getLocalConfig()?.enableModulesFeatures?.featuresRegisterModule?[safe: 0]?.enableQuestionLabel ?? false {
+        if mcaManagerSession.getLocalConfig()?.mcaConfigFile?.enableModulesFeatures?.featuresRegisterModule?[safe: 0]?.enableQuestionLabel ?? false {
             
             constrain(self.view, codeContainer, questionLabel, linkeableLabel) { (view, container, question, label) in
                 question.top == container.bottom + 20.0

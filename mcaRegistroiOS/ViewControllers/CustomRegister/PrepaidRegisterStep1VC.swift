@@ -57,7 +57,7 @@ class PrepaidRegisterStep1VC: UIViewController, MobilePhoneNumberOnChangeDelegat
         validador?.registerField(txtRut.textField, rules: [RequiredRule(message: "empty-fields".localized)])
         viewContent.addSubview(txtRut)
         
-        if mcaManagerSession.getLocalConfig()?.enableModulesFeatures?.featuresRegisterModule?[safe: 0]?.enableInstructionsLabel ?? false {
+        if mcaManagerSession.getLocalConfig()?.mcaConfigFile?.enableModulesFeatures?.featuresRegisterModule?[safe: 0]?.enableInstructionsLabel ?? false {
             instructionLbl.text = conf?.translations?.data?.newRegisterTexts?.newRegisterSubStep1 ?? ""
             viewContent.addSubview(instructionLbl)
         }
@@ -198,7 +198,7 @@ class PrepaidRegisterStep1VC: UIViewController, MobilePhoneNumberOnChangeDelegat
             group.trailing == view.trailing - 31.0
             group.height == 60.0
             
-            if mcaManagerSession.getLocalConfig()?.enableModulesFeatures?.featuresRegisterModule?[safe: 0]?.enableInstructionsLabel ?? false {
+            if mcaManagerSession.getLocalConfig()?.mcaConfigFile?.enableModulesFeatures?.featuresRegisterModule?[safe: 0]?.enableInstructionsLabel ?? false {
                 instruction.top == group.bottom + 16.0
                 instruction.leading == view.leading + 32.0
                 instruction.trailing == view.trailing - 31.0
@@ -227,7 +227,7 @@ class PrepaidRegisterStep1VC: UIViewController, MobilePhoneNumberOnChangeDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = institutionalColors.claroWhiteColor
-        let showModule = mcaManagerSession.getLocalConfig()?.showModulesConfiguration?.showRegisterModule ?? false
+        let showModule = mcaManagerSession.getLocalConfig()?.mcaConfigFile?.showModulesConfiguration?.showRegisterModule ?? false
         if showModule {
             setupElements()
         }else{

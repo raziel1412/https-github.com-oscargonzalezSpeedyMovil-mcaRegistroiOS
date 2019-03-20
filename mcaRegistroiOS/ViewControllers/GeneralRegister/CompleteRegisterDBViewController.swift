@@ -221,7 +221,7 @@ public class CompleteRegisterDBViewController: UIViewController, UITextFieldDele
         lbPasswordRule3.text = NSString(format: "%@ %@",viñeta, passwordRule3) as String
         
         // OCULTAR TERMINOS Y CONDICIONES
-        if mcaManagerSession.getLocalConfig()?.enableModulesFeatures?.featuresRegisterModule?[safe: 0]?.enableTermsAndConditions ?? false{
+        if mcaManagerSession.getLocalConfig()?.mcaConfigFile?.enableModulesFeatures?.featuresRegisterModule?[safe: 0]?.enableTermsAndConditions ?? false{
             
             UIView.animate(withDuration: 0.1,delay: 0.1,options: UIViewAnimationOptions.curveEaseIn,animations: { () -> Void in
                 self.view.superview?.layoutIfNeeded()
@@ -665,7 +665,7 @@ public class CompleteRegisterDBViewController: UIViewController, UITextFieldDele
     
     func updateUserInfoDataBase() {
         
-        let service = mcaManagerSession.getLocalConfig()?.mobileFirstServerConfiguration?.mobileFirstCountryServices?[safe: 0]?.retrieveProfileInformation ?? ""
+        let service = mcaManagerSession.getLocalConfig()?.mcaConfigFile?.mobileFirstServerConfiguration?.mobileFirstCountryServices?[safe: 0]?.retrieveProfileInformation ?? ""
         
         let updateInfo = mcaManagerServer.getLastResponseFromService(service: service, ofType: RetrieveProfileInformationResult.self)
         
