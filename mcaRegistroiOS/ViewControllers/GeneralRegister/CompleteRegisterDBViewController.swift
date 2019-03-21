@@ -806,17 +806,16 @@ public class CompleteRegisterDBViewController: UIViewController, UITextFieldDele
                                                             AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Registro|Exito:Cerrar")
                                                             self.serviceProfileInformation()
                                                             
-                                                            
-                                                            //borrar estas lineas al final
-//                                                            #if DEBUG
-//                                                            SessionSingleton.sharedInstance.setIsDigitalBirth(isDigital:true)
-//                                                            SessionSingleton.sharedInstance.setActionType(type: 0)
-                                                            
-//                                                            DispatchQueue.main.async(execute: {
-//                                                                UIApplication.shared.keyWindow?.rootViewController  = ContainerVC();
-//                                                            })
-//                                                            #endif
-                                                            //borrar estas lineas al final
+                                                            /*comentar estas lineas al final*/
+                                                            if mcaManagerSession.getModeCompilation() == "DEBUG" {
+//                                                                SessionSingleton.sharedInstance.setIsDigitalBirth(isDigital:true)
+//                                                                SessionSingleton.sharedInstance.setActionType(type: 0)
+//
+//                                                                DispatchQueue.main.async(execute: {
+//                                                                    UIApplication.shared.keyWindow?.rootViewController  = ContainerVC();
+//                                                                })
+                                                            }
+                                                            /*comentar estas lineas al final*/
                                                         }
                                                         
                                                         GeneralAlerts.showAcceptOnly(title: alertTitle, text: alertText, icon: alertIcon, acceptTitle: alertAcceptTitle, acceptBtnColor: alertBtnColor, onAcceptEvent: onAcceptEvent)
@@ -853,10 +852,10 @@ public class CompleteRegisterDBViewController: UIViewController, UITextFieldDele
                                                                     /*NACIMIENTO DIGITAL*/
                                                                     
                                                                     //borrar estas lineas al final
-//                                                                    #if DEBUG
-                                                                    //                    mcaManagerSession.setIsDigitalBirth(isDigital:true)
-                                                                    //                    mcaManagerSession.setActionType(type: 0)
-//                                                                    #endif
+                                                                    if mcaManagerSession.getModeCompilation() == "DEBUG" {
+//                                                                        mcaManagerSession.setIsDigitalBirth(isDigital:true)
+//                                                                        mcaManagerSession.setActionType(type: 0)
+                                                                    }
                                                                     //borrar estas lineas al final
                                                                     
                                                                     DispatchQueue.main.async(execute: {
