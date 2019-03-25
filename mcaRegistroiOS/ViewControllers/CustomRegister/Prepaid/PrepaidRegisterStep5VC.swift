@@ -179,6 +179,8 @@ class PrepaidRegisterStep5VC: UIViewController, UITextFieldDelegate {
             txtPass2?.resignFirstResponder();
         }
         
+         let typeLoB = self.lineOfBussines == .Prepaid ? "1" : self.lineOfBussines == .Postpaid ? "2" : self.lineOfBussines == .Fixed ? "3" : ""
+        
         if let count = txtPass1?.text?.count, count > 0, let txt1 = txtPass1?.text, txt1.trimmingCharacters(in: .whitespaces).count > 0, let count2 = txtPass2?.text?.count, count2 > 0, let txt2 = txtPass2?.text, txt2.trimmingCharacters(in: .whitespaces).count > 0 {
             
             if (txtPass1?.text == txtPass2?.text) {
@@ -222,6 +224,8 @@ class PrepaidRegisterStep5VC: UIViewController, UITextFieldDelegate {
                     case .Fixed:
                         let onAcceptEvent = {
                             self.automaticLogin()
+                            
+                            AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Registro|Exito:Cerrar")
                         }
                         
                         GeneralAlerts.showAcceptOnly(title: self.conf?.translations?.data?.generales?.successTitle ?? "¡Felicidades!", text: self.conf?.translations?.data?.registro?.registerSuccessText ?? "Tu cuenta Mi Claro se ha creado exitosamente", icon: AlertIconType.IconoAlertaFelicidades, acceptTitle: self.conf?.translations?.data?.generales?.confirmBtn ?? "Confirmar", onAcceptEvent: onAcceptEvent)
@@ -233,6 +237,8 @@ class PrepaidRegisterStep5VC: UIViewController, UITextFieldDelegate {
                         
                         let onAcceptEvent = {
                             self.callWSAssociateAccount()
+                            
+                            AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Registro|Exito:Cerrar")
                         }
                         
                          GeneralAlerts.showAcceptOnly(title: self.conf?.translations?.data?.generales?.successTitle ?? "¡Felicidades!", text: self.conf?.translations?.data?.registro?.registerSuccessText ?? "Tu cuenta Mi Claro se ha creado exitosamente", icon: AlertIconType.IconoAlertaFelicidades, acceptTitle: self.conf?.translations?.data?.generales?.confirmBtn ?? "Confirmar", onAcceptEvent: onAcceptEvent)
@@ -243,6 +249,7 @@ class PrepaidRegisterStep5VC: UIViewController, UITextFieldDelegate {
                     case .Postpaid:
                         let onAcceptEvent = {
                             self.automaticLogin()
+                            AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Registro|Exito:Cerrar")
                         }
                         GeneralAlerts.showAcceptOnly(title: self.conf?.translations?.data?.generales?.successTitle ?? "¡Felicidades!", text: self.conf?.translations?.data?.registro?.registerSuccessText ?? "Tu cuenta Mi Claro se ha creado exitosamente", icon: AlertIconType.IconoAlertaFelicidades, acceptTitle: self.conf?.translations?.data?.generales?.confirmBtn ?? "Confirmar", onAcceptEvent: onAcceptEvent)
                         
@@ -257,11 +264,14 @@ class PrepaidRegisterStep5VC: UIViewController, UITextFieldDelegate {
                 
             } else {
                 mandatoryPass2.displayView(customString: conf?.translations?.data?.generales?.passwordSameError)
+                AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewRegistro(viewName: "Registro|Paso 6|Ingresar contrasena|Detenido",type:6, detenido: true, mensaje: conf?.translations?.data?.generales?.passwordSameError, typeLoB: typeLoB)
             }
             
         } else {
             mandatoryPass1.displayView()
             mandatoryPass2.displayView()
+            
+            AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewRegistro(viewName: "Registro|Paso 6|Ingresar contrasena|Detenido",type:6, detenido: true, mensaje:mcaManagerSession.getGeneralConfig()?.translations?.data?.generales?.emptyField, typeLoB: typeLoB)
         }
     }
     
@@ -381,14 +391,12 @@ class PrepaidRegisterStep5VC: UIViewController, UITextFieldDelegate {
         if (txtPass1 == textField) {
             if newLength == 0 {
                 mandatoryPass1.displayView()
-                AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewRegistro(viewName: "Registro|Paso 5|Ingresar contrasena|Detenido",type:5, detenido: true, mensaje:"error")
             } else {
                 let str = textField.text! as NSString
                 let cad = str.replacingCharacters(in: range, with: string)
                 let validateResult = self.validate(pass: cad);
                 if validateResult.hasError == true {
                     mandatoryPass1.displayView(customString: validateResult.errorString)
-                    AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewRegistro(viewName: "Registro|Paso 5|Ingresar contrasena|Detenido",type:5, detenido: true, mensaje:validateResult.errorString)
                 } else {
                     mandatoryPass1.hideView()
                 }
@@ -398,14 +406,12 @@ class PrepaidRegisterStep5VC: UIViewController, UITextFieldDelegate {
         if (txtPass2 == textField) {
             if newLength == 0 {
                 mandatoryPass2.displayView()
-                AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewRegistro(viewName: "Registro|Paso 5|Ingresar contrasena|Detenido",type:5, detenido: true, mensaje:"error")
             } else {
                 let str = textField.text! as NSString
                 let cad = str.replacingCharacters(in: range, with: string)
                 let validateResult = self.validate(pass: cad);
                 if validateResult.hasError == true {
                     mandatoryPass2.displayView(customString: validateResult.errorString)
-                    AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewRegistro(viewName: "Registro|Paso 5|Ingresar contrasena",type:5, detenido: true, mensaje:validateResult.errorString)
                 } else {
                     mandatoryPass2.hideView()
                 }
