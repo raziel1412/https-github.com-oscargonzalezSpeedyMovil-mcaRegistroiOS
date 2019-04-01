@@ -43,6 +43,10 @@
 		F4C063EC221DF85C0092021B /* CompleteRegisterDBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C063EA221DF85C0092021B /* CompleteRegisterDBViewController.swift */; };
 		F4C063ED221DF85C0092021B /* CompleteRegisterDBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C063EB221DF85C0092021B /* CompleteRegisterDBViewController.xib */; };
 		F4C063F6221F6E490092021B /* mcaWelcomeiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C063F5221F6E490092021B /* mcaWelcomeiOS.framework */; };
+		F4E5B57B224D4F9D00179FC2 /* RegisterStep1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5B57A224D4F9D00179FC2 /* RegisterStep1VC.swift */; };
+		F4E5B589224E900300179FC2 /* RegisterTokenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5B588224E900300179FC2 /* RegisterTokenVC.swift */; };
+		F4E5B597224EA81300179FC2 /* CompleteRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5B595224EA81300179FC2 /* CompleteRegisterVC.swift */; };
+		F4E5B598224EA81300179FC2 /* CompleteRegisterVC.xib in Sources */ = {isa = PBXBuildFile; fileRef = F4E5B596224EA81300179FC2 /* CompleteRegisterVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +76,10 @@
 		F4C063EA221DF85C0092021B /* CompleteRegisterDBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteRegisterDBViewController.swift; sourceTree = "<group>"; };
 		F4C063EB221DF85C0092021B /* CompleteRegisterDBViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompleteRegisterDBViewController.xib; sourceTree = "<group>"; };
 		F4C063F5221F6E490092021B /* mcaWelcomeiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mcaWelcomeiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4E5B57A224D4F9D00179FC2 /* RegisterStep1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep1VC.swift; sourceTree = "<group>"; };
+		F4E5B588224E900300179FC2 /* RegisterTokenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTokenVC.swift; sourceTree = "<group>"; };
+		F4E5B595224EA81300179FC2 /* CompleteRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteRegisterVC.swift; sourceTree = "<group>"; };
+		F4E5B596224EA81300179FC2 /* CompleteRegisterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteRegisterVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +152,10 @@
 		1D2B53EE21C1D265008ABC44 /* CustomRegister */ = {
 			isa = PBXGroup;
 			children = (
+				F4E5B57A224D4F9D00179FC2 /* RegisterStep1VC.swift */,
+				F4E5B588224E900300179FC2 /* RegisterTokenVC.swift */,
+				F4E5B595224EA81300179FC2 /* CompleteRegisterVC.swift */,
+				F4E5B596224EA81300179FC2 /* CompleteRegisterVC.xib */,
 				1D2B53EF21C1D287008ABC44 /* PrepaidRegisterStep1VC.swift */,
 				1D2B540321C1D738008ABC44 /* PostPaid */,
 				1D2B53FA21C1D725008ABC44 /* Fixed */,
@@ -351,6 +363,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E5B597224EA81300179FC2 /* CompleteRegisterVC.swift in Sources */,
+				F4E5B598224EA81300179FC2 /* CompleteRegisterVC.xib in Sources */,
 				1D2B541721C2CB0A008ABC44 /* CodeBySmsVC.swift in Sources */,
 				1D2B540D21C1D808008ABC44 /* Postpaid-Mixed02.swift in Sources */,
 				1D2B53E721C19F1B008ABC44 /* mcaRegisterManager.swift in Sources */,
@@ -359,12 +373,14 @@
 				1D2B53FF21C1D72F008ABC44 /* Fixed05ViewController.swift in Sources */,
 				1D2B53F921C1D71B008ABC44 /* PrepaidRegisterStep2VC.swift in Sources */,
 				1D2B53F021C1D287008ABC44 /* PrepaidRegisterStep1VC.swift in Sources */,
+				F4E5B57B224D4F9D00179FC2 /* RegisterStep1VC.swift in Sources */,
 				1D2B53F221C1D293008ABC44 /* PrepaidRegisterDataVC.swift in Sources */,
 				1D2B53F721C1D71B008ABC44 /* PrepaidRegisterStep5VC.swift in Sources */,
 				F4C063EC221DF85C0092021B /* CompleteRegisterDBViewController.swift in Sources */,
 				1D2B540221C1D72F008ABC44 /* Fixed02ViewController.swift in Sources */,
 				1D2B541121C1DD9E008ABC44 /* PrepaidRegisterPasswordVC.swift in Sources */,
 				1D2B540F21C1DD89008ABC44 /* PrepaidRegisterMobileVC.swift in Sources */,
+				F4E5B589224E900300179FC2 /* RegisterTokenVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
