@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import mcaManageriOS
 
 public enum RegisterType {
     case General
@@ -17,18 +18,23 @@ public class mcaRegisterManager: NSObject {
     
     open class func launch(navController: UINavigationController?, typeRegister: RegisterType, doLoginWhenFinish: @escaping ((_ doAutomaticLogin: Bool) -> Void)) {
         
-        if typeRegister == .General {
-            let initialRegisterVC = PrepaidRegisterDataVC()
-            initialRegisterVC.doLoginWhenFinish = doLoginWhenFinish
-            navController?.pushViewController(initialRegisterVC, animated: true)
-        } else if typeRegister == .Custom {
-            //navController?.pushViewController(PrepaidRegisterStep1VC(), animated: true)
-            let initialRegisterVC = PrepaidRegisterStep1VC()
+        let countryCode = mcaManagerSession.getCurrentCountry() ?? ""
+        if countryCode == "CL"{
+            if typeRegister == .General {
+                let initialRegisterVC = PrepaidRegisterDataVC()
+                initialRegisterVC.doLoginWhenFinish = doLoginWhenFinish
+                navController?.pushViewController(initialRegisterVC, animated: true)
+            } else if typeRegister == .Custom {
+                //navController?.pushViewController(PrepaidRegisterStep1VC(), animated: true)
+                let initialRegisterVC = PrepaidRegisterStep1VC()
+                initialRegisterVC.doLoginWhenFinish = doLoginWhenFinish
+                navController?.pushViewController(initialRegisterVC, animated: true)
+            }
+        }else{
+            let initialRegisterVC = RegisterStep1VC()
             initialRegisterVC.doLoginWhenFinish = doLoginWhenFinish
             navController?.pushViewController(initialRegisterVC, animated: true)
         }
-        
-        
     }
 
 }
