@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CompleteRegisterDBViewController" customModule="mcaRegistroiOS" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CompleteRegisterVC" customModule="mcaRegistroiOS" customModuleProvider="target">
             <connections>
                 <outlet property="btnContinue" destination="WjT-Ld-Mmg" id="KYZ-eT-eSH"/>
                 <outlet property="iconEmail" destination="UTb-KN-RQy" id="YXi-Be-zMm"/>

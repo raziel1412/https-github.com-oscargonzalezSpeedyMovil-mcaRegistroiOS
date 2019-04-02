@@ -221,62 +221,33 @@ public class CompleteRegisterDBViewController: UIViewController, UITextFieldDele
         lbPasswordRule3.text = NSString(format: "%@ %@",viñeta, passwordRule3) as String
         
         // OCULTAR TERMINOS Y CONDICIONES
-        if mcaManagerSession.getLocalConfig()?.mcaConfigFile?.enableModulesFeatures?.featuresRegisterModule?[safe: 0]?.enableTermsAndConditions ?? false{
-            
-            UIView.animate(withDuration: 0.1,delay: 0.1,options: UIViewAnimationOptions.curveEaseIn,animations: { () -> Void in
-                self.view.superview?.layoutIfNeeded()
-            }, completion: { (finished) -> Void in
-                
-                self.txtMandatoryPass = MandatoryInformation(frame: CGRect(x: marginX + 40, y: self.txfPassword.frame.maxY, width: viewWidth - marginX*2 - 40, height: textFieldHeight/3))
-                self.txtMandatoryPass.backgroundColor = UIColor.clear
-                self.scrollView.addSubview(self.txtMandatoryPass)
-                
-                self.txtMandatoryConfirmPass = MandatoryInformation(frame: CGRect(x: marginX + 40, y: self.txfConfirmPassword.frame.maxY, width: viewWidth - marginX*2 - 40, height: textFieldHeight/3))
-                self.txtMandatoryConfirmPass.backgroundColor = UIColor.clear
-                self.scrollView.addSubview(self.txtMandatoryConfirmPass)
-                
-                self.lblTerminos = LinkableLabel();
-                self.lblTerminos?.isEnabled = true
-                let tap = UITapGestureRecognizer(target: self, action: #selector(self.lnkTerminos_OnClick))
-                self.lblTerminos?.frame = CGRect(x: 70, y: self.viewContainerDescriptionPass.frame.maxY, width: 220, height: 60)
-                self.lblTerminos?.addGestureRecognizer(tap);
-                self.lblTerminos?.showText(text: strTerminosYCondiciones);
-                self.lblTerminos?.textAlignment = .left;
-                self.lblTerminos?.font = UIFont(name: RobotoFontName.RobotoRegular.rawValue, size: CGFloat(14.0))
-                self.lblTerminos?.numberOfLines = 0
-                self.scrollView.addSubview(self.lblTerminos!);
-                
-                self.chkTerminos = SquaredCheckbox();
-                self.chkTerminos?.frame = CGRect(x: 30, y: self.viewContainerDescriptionPass.frame.maxY, width: 35, height: 40)
-                self.chkTerminos?.addTarget(self, action: #selector(self.chkValidate), for: UIControlEvents.touchUpInside)
-                self.chkTerminos?.isEnabled = true
-                self.chkTerminos?.isUserInteractionEnabled = true
-                self.scrollView.addSubview(self.chkTerminos!)
-                
-                self.chkValidate()
-            })
-        }else{
-            self.topConstraintButtonContinue.constant =  50
-            UIView.animate(withDuration: 0.1,delay: 0.1,options: UIViewAnimationOptions.curveEaseIn,animations: { () -> Void in
-                self.view.superview?.layoutIfNeeded()
-            }, completion: { (finished) -> Void in
-                
-                self.txtMandatoryPass = MandatoryInformation(frame: CGRect(x: marginX + 40, y: self.txfPassword.frame.maxY, width: viewWidth - marginX*2 - 40, height: textFieldHeight/3))
-                self.txtMandatoryPass.backgroundColor = UIColor.clear
-                self.scrollView.addSubview(self.txtMandatoryPass)
-                
-                self.txtMandatoryConfirmPass = MandatoryInformation(frame: CGRect(x: marginX + 40, y: self.txfConfirmPassword.frame.maxY, width: viewWidth - marginX*2 - 40, height: textFieldHeight/3))
-                self.txtMandatoryConfirmPass.backgroundColor = UIColor.clear
-                self.scrollView.addSubview(self.txtMandatoryConfirmPass)
-                
-                
-                self.viewContainerDescriptionPass.isHidden = true
-                self.view.superview?.layoutIfNeeded()
-                self.cancelButton.frame = CGRect(x: 30, y: self.btnContinue.frame.maxY + 25, width: self.view.frame.width - 60, height: 40)
-                self.scrollView.addSubview(self.cancelButton)
-                self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.cancelButton.frame.maxY + 30)
-            })
-        }
+        self.txtMandatoryPass = MandatoryInformation(frame: CGRect(x: marginX + 40, y: self.txfPassword.frame.maxY, width: viewWidth - marginX*2 - 40, height: textFieldHeight/3))
+        self.txtMandatoryPass.backgroundColor = UIColor.clear
+        self.scrollView.addSubview(self.txtMandatoryPass)
+        
+        self.txtMandatoryConfirmPass = MandatoryInformation(frame: CGRect(x: marginX + 40, y: self.txfConfirmPassword.frame.maxY, width: viewWidth - marginX*2 - 40, height: textFieldHeight/3))
+        self.txtMandatoryConfirmPass.backgroundColor = UIColor.clear
+        self.scrollView.addSubview(self.txtMandatoryConfirmPass)
+        
+        self.lblTerminos = LinkableLabel();
+        self.lblTerminos?.isEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.lnkTerminos_OnClick))
+        self.lblTerminos?.frame = CGRect(x: 70, y: self.viewContainerDescriptionPass.frame.maxY, width: 220, height: 60)
+        self.lblTerminos?.addGestureRecognizer(tap);
+        self.lblTerminos?.showText(text: strTerminosYCondiciones);
+        self.lblTerminos?.textAlignment = .left;
+        self.lblTerminos?.font = UIFont(name: RobotoFontName.RobotoRegular.rawValue, size: CGFloat(14.0))
+        self.lblTerminos?.numberOfLines = 0
+        self.scrollView.addSubview(self.lblTerminos!);
+        
+        self.chkTerminos = SquaredCheckbox();
+        self.chkTerminos?.frame = CGRect(x: 30, y: self.viewContainerDescriptionPass.frame.maxY, width: 35, height: 40)
+        self.chkTerminos?.addTarget(self, action: #selector(self.chkValidate), for: UIControlEvents.touchUpInside)
+        self.chkTerminos?.isEnabled = true
+        self.chkTerminos?.isUserInteractionEnabled = true
+        self.scrollView.addSubview(self.chkTerminos!)
+        
+        self.chkValidate()
     }
     
     override public func didReceiveMemoryWarning() {

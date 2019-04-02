@@ -1,5 +1,5 @@
 //
-//  CompleteRegisterDBViewController.swift
+//  CompleteRegisterVC.swift
 //  MiClaro
 //
 //  Created by Jonathan Abimael Cruz Orozco and Jorge Isaí García Reyes on 16/08/18.
