@@ -148,6 +148,15 @@ class CodeBySmsVC: UIViewController {
             return
         }
         
+        //******Codigo HardCode para brincar la validacion del pin
+        //        let pswVC = PrepaidRegisterPasswordVC();
+        //        pswVC.lineOfBussines = self.lineOfBusinnes
+        //        pswVC.setPersonalQuestions(r: self.personal);
+        //        pswVC.setValidateNumber(r: self.reqNum);
+        //        self.navigationController?.pushViewController(pswVC, animated: true)
+        //
+        //        return
+        
         let req = ValidatePersonalVerificationQuestionRequest();
         var questions = [SecurityQuestionRequest]()
         
@@ -194,6 +203,7 @@ class CodeBySmsVC: UIViewController {
             mcaManagerServer.executeValidatePersonalVerificationQuestions(params: req,
                                                                           onSuccess: { (result) in
                                                                             let pswVC = PrepaidRegisterPasswordVC();
+                                                                            pswVC.lineOfBussines = self.lineOfBusinnes
                                                                             pswVC.setPersonalQuestions(r: self.personal);
                                                                             pswVC.setValidateNumber(r: r);
                                                                             pswVC.doLoginWhenFinish = self.doLoginWhenFinish

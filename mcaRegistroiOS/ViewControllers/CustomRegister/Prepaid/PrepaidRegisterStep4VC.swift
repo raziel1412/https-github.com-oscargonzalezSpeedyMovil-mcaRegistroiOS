@@ -26,6 +26,8 @@ class PrepaidRegisterStep4VC: UIViewController {
     /// Constante que almacena la configuración
     let conf = mcaManagerSession.getGeneralConfig()
     
+    var previousView = TypeRegisterView.Register
+    
     /// Variable ValidateNumberRequest
     private var reqNum : ValidateNumberRequest?
     /// Variable ValidatePersonalVerificationQuestionRequest
@@ -132,8 +134,14 @@ class PrepaidRegisterStep4VC: UIViewController {
         }
         
         let timeSMS = AnalyticsInteractionSingleton.sharedInstance.stopTimer()
-        AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewServicioPrepago(viewName: "Mis servicios|Agregar prepago|Paso 4Ingresar codigo verificacion", type: "4", detenido: false, intervalo: timeSMS)
-        AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Mis servicios|Agregar prepago|Paso 4Ingresar codigo verificacion:Valida")
+        if previousView == TypeRegisterView.AddPrepaid{
+            AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewServicioPrepago(viewName: "Mis servicios|Agregar prepago|Paso 4|Ingresar codigo verificacion", type: "4", detenido: false, intervalo: timeSMS)
+            AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Mis servicios|Agregar prepago|Paso 4|Ingresar codigo verificacion:Valida")
+        }else{
+            let typeLoB = LoB == TypeLineOfBussines.Prepaid ? "1" : LoB == TypeLineOfBussines.Postpaid ? "2" : ""
+            AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewRegistro(viewName: "Registro|Paso 5|Ingresar codigo verificacion", type:5, detenido: false, typeLoB: typeLoB, intervalo: timeSMS)
+            AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Registro|Paso 5|Ingresar codigo verificacion:Validar")
+        }
         let shouldContinue = self.shouldContinue()
         if shouldContinue.should {
             switch LoB {
@@ -243,6 +251,17 @@ class PrepaidRegisterStep4VC: UIViewController {
         req.validatePersonalVerificationQuestions?.securityQuestions = questions//[question];
         req.validatePersonalVerificationQuestions?.userProfileId = reqNum?.validateNumber?.userProfileId
         req.validatePersonalVerificationQuestions?.lineOfBusiness = LoB.rawValue
+        
+        //******Codigo HardCode para brincar la validacion del pin
+        //        let prepaid5 = PrepaidRegisterStep5VC()
+        //        prepaid5.RUT = self.RUT
+        //        prepaid5.numberPhone = self.phoneUser
+        //        prepaid5.setValidateNumber(r: self.reqNum)
+        //        prepaid5.lineOfBussines = self.LoB
+        //        self.navigationController?.pushViewController(prepaid5, animated: true)
+        //
+        //        return
+        
         mcaManagerServer.executeValidatePersonalVerificationQuestions(params: req, onSuccess: { (result, resultType) in
             let prepaid5 = PrepaidRegisterStep5VC()
             prepaid5.RUT = self.RUT

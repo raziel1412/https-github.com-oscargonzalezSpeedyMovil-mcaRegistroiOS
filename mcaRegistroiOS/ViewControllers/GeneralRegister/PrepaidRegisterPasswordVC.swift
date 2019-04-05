@@ -167,11 +167,15 @@ class PrepaidRegisterPasswordVC: UIViewController, UITextFieldDelegate {
                 personal.accountUserTaxId = "";
                 personal.rUT = perQuestions?.validatePersonalVerificationQuestions?.userProfileId;
                 
-                for item in perQuestions!.validatePersonalVerificationQuestions!.securityQuestions! {
-                    if "1" == item.idQuestion {
-                        req.createNewRegister?.userProfileId = item.answer
-                    }else if "3" == item.idQuestion {
-                        req.createNewRegister?.email = item.answer
+                //              guard let secQuestions = respuesta?.retrievePersonalVerificationQuestionsResponse?.securityQuestions else { return; }
+                if perQuestions?.validatePersonalVerificationQuestions?.securityQuestions != nil {
+                    
+                    for item in (perQuestions?.validatePersonalVerificationQuestions?.securityQuestions)! {
+                        if "1" == item.idQuestion {
+                            req.createNewRegister?.userProfileId = item.answer
+                        }else if "3" == item.idQuestion {
+                            req.createNewRegister?.email = item.answer
+                        }
                     }
                 }
                 
